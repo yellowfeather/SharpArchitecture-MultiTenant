@@ -263,6 +263,57 @@ ul#mainMenu li.selected a
     color: #FFF;
 }
 
+/* buttons (from: http://www.zurb.com/article/266/super-awesome-buttons-with-css3-and-rgba)
+----------------------------------------------------------*/
+
+a.button, a.button:visited {
+  background-color: #86A6C6;
+	display: inline-block; 
+	padding: 5px 10px 6px; 
+	color: #fff; 
+	text-decoration: none;
+	-moz-border-radius: 5px; 
+	-webkit-border-radius: 5px;
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	text-shadow: 0 -1px 1px rgba(0,0,0,0.25);
+	border-bottom: 1px solid rgba(0,0,0,0.25);
+	position: relative;
+	cursor: pointer;
+}
+ 
+a.button:hover { background-color: #5C87B2; color: #fff; }
+a.button:active { top: 1px; }
+a.small.button, a.small.button:visited { font-size: 11px; padding: ; }
+a.button, a.button:visited,
+a.medium.button, a.medium.button:visited { font-size: 13px; font-weight: bold; line-height: 1; text-shadow: 0 -1px 1px rgba(0,0,0,0.25); }
+a.large.button, a.large.button:visited { font-size: 14px; padding: 8px 14px 9px; }
+
+/* grid
+----------------------------------------------------------*/
+
+.grid {
+  line-height: 1.5em;
+  margin-top: 1em;
+  text-align: left;
+  width: 100%;
+}
+
+.grid thead {
+  background-color: #E2E7ED;
+}
+
+.grid th, .grid td {
+  padding: 2px;
+}
+
+.pagination {
+  background-color: #E2E7ED;
+  line-height: 1.5em;
+  padding: 2px;
+}
+
+
 /* MISC  
 ----------------------------------------------------------*/
 .clear

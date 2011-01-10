@@ -9,7 +9,8 @@ namespace SharpArchitecture.MultiTenant.Data.NHibernateMaps
   {
     public override bool ShouldMap(Type type)
     {
-      return IsMultiTenantEntity(type);
+      var shouldMap = IsMultiTenantEntity(type);
+      return shouldMap;
     }
   }
 }

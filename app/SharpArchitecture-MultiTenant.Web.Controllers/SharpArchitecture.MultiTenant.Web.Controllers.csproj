@@ -70,12 +70,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControllerEnums.cs" />
+    <Compile Include="Customers\ViewModel\CustomerListViewModel.cs" />
+    <Compile Include="Customers\CustomersController.cs" />
+    <Compile Include="Customers\ViewModel\CustomerFormViewModel.cs" />
+    <Compile Include="Customers\ViewModel\CustomerViewModel.cs" />
     <Compile Include="HomeController.cs" />
     <Compile Include="..\..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteRegistrar.cs" />
+    <Compile Include="TempDataExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SharpArchitecture-MultiTenant.Core\SharpArchitecture.MultiTenant.Core.csproj">
@@ -85,6 +90,10 @@
     <ProjectReference Include="..\SharpArchitecture-MultiTenant.ApplicationServices\SharpArchitecture.MultiTenant.ApplicationServices.csproj">
       <Project>{EA00777D-3D7A-4406-8BFB-E5A90CF0E8A9}</Project>
       <Name>SharpArchitecture-MultiTenant.ApplicationServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharpArchitecture-MultiTenant.Framework\SharpArchitecture.MultiTenant.Framework.csproj">
+      <Project>{F5A0D972-5870-4EB8-8400-F7F2435AE11C}</Project>
+      <Name>SharpArchitecture.MultiTenant.Framework</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

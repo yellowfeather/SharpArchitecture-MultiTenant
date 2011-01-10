@@ -15,9 +15,10 @@ namespace SharpArchitecture.MultiTenant.Data.NHibernateMaps
     public override bool ShouldMap(Type type)
     {
       var isMultiTenantEntity = IsMultiTenantEntity(type);
-      return type.GetInterfaces().Any(x =>
+      var shouldMap = type.GetInterfaces().Any(x =>
                                       x.IsGenericType && x.GetGenericTypeDefinition() == typeof (IEntityWithTypedId<>) &&
                                       !isMultiTenantEntity);
+      return shouldMap;
     }
 
     public override bool ShouldMap(Member member)
