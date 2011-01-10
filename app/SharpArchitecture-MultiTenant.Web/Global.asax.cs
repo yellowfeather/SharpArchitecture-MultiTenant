@@ -13,6 +13,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Reflection;
+using SharpArchitecture.MultiTenant.Framework.Services;
 using SharpArchitecture.MultiTenant.Web.Controllers;
 using SharpArchitecture.MultiTenant.Data.NHibernateMaps;
 using SharpArchitecture.MultiTenant.Web.CastleWindsor;
@@ -82,11 +83,18 @@ namespace SharpArchitecture.MultiTenant.Web
         /// </summary>
         private void InitializeNHibernateSession()
         {
-            NHibernateSession.Init(
+          var mappingAssemblies = new [] { Server.MapPath("~/bin/SharpArchitecture.MultiTenant.Data.dll") };
+
+          var configFile = Server.MapPath("~/NHibernate.config");
+          NHibernateSession.Init(
                 webSessionStorage,
-                new string[] { Server.MapPath("~/bin/SharpArchitecture.MultiTenant.Data.dll") },
+                mappingAssemblies,
                 new AutoPersistenceModelGenerator().Generate(),
-                Server.MapPath("~/NHibernate.config"));
+                configFile);
+
+            var tenantConfigFile = Server.MapPath("~/NHibernate.tenant.config");
+            var multiTenantInitializer = ServiceLocator.Current.GetInstance<IMultiTenantInitializer>();
+            multiTenantInitializer.Initialize(mappingAssemblies, new MultiTenantAutoPersistenceModelGenerator(),  tenantConfigFile);
         }
 
         protected void Application_Error(object sender, EventArgs e)

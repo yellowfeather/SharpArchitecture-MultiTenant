@@ -6,6 +6,9 @@ using SharpArch.Web.Castle;
 using Castle.MicroKernel.Registration;
 using SharpArch.Core.CommonValidator;
 using SharpArch.Core.NHibernateValidator.CommonValidatorAdapter;
+using SharpArchitecture.MultiTenant.Framework.NHibernate;
+using SharpArchitecture.MultiTenant.Framework.Services;
+using SharpArchitecture.MultiTenant.Web.Services;
 
 namespace SharpArchitecture.MultiTenant.Web.CastleWindsor
 {
@@ -16,6 +19,7 @@ namespace SharpArchitecture.MultiTenant.Web.CastleWindsor
             AddGenericRepositoriesTo(container);
             AddCustomRepositoriesTo(container);
             AddApplicationServicesTo(container);
+            AddMultiTenantServicesTo(container);
 
             container.Register(
                 Component
@@ -24,7 +28,7 @@ namespace SharpArchitecture.MultiTenant.Web.CastleWindsor
                     .Named("validator"));
         }
 
-        private static void AddApplicationServicesTo(IWindsorContainer container)
+      private static void AddApplicationServicesTo(IWindsorContainer container)
         {
             container.Register(
                 AllTypes
@@ -73,6 +77,19 @@ namespace SharpArchitecture.MultiTenant.Web.CastleWindsor
                         .For(typeof(INHibernateRepositoryWithTypedId<,>))
                         .ImplementedBy(typeof(NHibernateRepositoryWithTypedId<,>))
                         .Named("nhibernateRepositoryWithTypedId"));
+        }
+
+        private static void AddMultiTenantServicesTo(IWindsorContainer container)
+        {
+          container.Register(
+                  Component
+                      .For(typeof(IMultiTenantInitializer))
+                      .ImplementedBy(typeof(MultiTenantInitializer)));
+
+          container.Register(
+                  Component
+                      .For(typeof(ITenantContext))
+                      .ImplementedBy(typeof(TenantContext)));
         }
     }
 }
