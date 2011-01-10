@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SharpArchitecture-MultiTenant.Core</RootNamespace>
-    <AssemblyName>SharpArchitecture-MultiTenant.Core</AssemblyName>
+    <AssemblyName>SharpArchitecture.MultiTenant.Core</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SharpArchitecture-MultiTenant.Data</RootNamespace>
-    <AssemblyName>SharpArchitecture-MultiTenant.Data</AssemblyName>
+    <AssemblyName>SharpArchitecture.MultiTenant.Data</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -69,7 +69,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SharpArchitecture-MultiTenant.Core\SharpArchitecture-MultiTenant.Core.csproj">
+    <ProjectReference Include="..\SharpArchitecture-MultiTenant.Core\SharpArchitecture.MultiTenant.Core.csproj">
       <Project>{7696B4F6-2A10-40C4-A1E2-B9768182588C}</Project>
       <Name>SharpArchitecture-MultiTenant.Core</Name>
     </ProjectReference>
