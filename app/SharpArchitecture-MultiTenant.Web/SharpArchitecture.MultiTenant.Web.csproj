@@ -179,7 +179,7 @@
       <Project>{63E9AECE-3385-44F0-BDF9-4C01DD3C0647}</Project>
       <Name>SharpArchitecture-MultiTenant.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SharpArchitecture.MultiTenant.Framework\SharpArchitecture.MultiTenant.Framework.csproj">
+    <ProjectReference Include="..\SharpArchitecture-MultiTenant.Framework\SharpArchitecture.MultiTenant.Framework.csproj">
       <Project>{F5A0D972-5870-4EB8-8400-F7F2435AE11C}</Project>
       <Name>SharpArchitecture.MultiTenant.Framework</Name>
     </ProjectReference>

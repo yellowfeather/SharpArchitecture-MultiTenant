@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpArchitecture.MultiTena
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpArchitecture.MultiTenant.Web", "app\SharpArchitecture-MultiTenant.Web\SharpArchitecture.MultiTenant.Web.csproj", "{CD10C59F-658A-4297-9E52-A431B2E32EE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpArchitecture.MultiTenant.Framework", "app\SharpArchitecture.MultiTenant.Framework\SharpArchitecture.MultiTenant.Framework.csproj", "{F5A0D972-5870-4EB8-8400-F7F2435AE11C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpArchitecture-MultiTenant.Framework", "app\SharpArchitecture-MultiTenant.Framework\SharpArchitecture.MultiTenant.Framework.csproj", "{F5A0D972-5870-4EB8-8400-F7F2435AE11C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

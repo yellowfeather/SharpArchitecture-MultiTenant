@@ -77,7 +77,7 @@
       <Project>{7696B4F6-2A10-40C4-A1E2-B9768182588C}</Project>
       <Name>SharpArchitecture-MultiTenant.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SharpArchitecture.MultiTenant.Framework\SharpArchitecture.MultiTenant.Framework.csproj">
+    <ProjectReference Include="..\SharpArchitecture-MultiTenant.Framework\SharpArchitecture.MultiTenant.Framework.csproj">
       <Project>{F5A0D972-5870-4EB8-8400-F7F2435AE11C}</Project>
       <Name>SharpArchitecture.MultiTenant.Framework</Name>
     </ProjectReference>
