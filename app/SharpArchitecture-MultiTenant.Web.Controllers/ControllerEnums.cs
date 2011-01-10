@@ -1,4 +1,4 @@
-﻿namespace SharpArchitecture-MultiTenant.Web.Controllers
+﻿namespace SharpArchitecture.MultiTenant.Web.Controllers
 {
     public class ControllerEnums
     {

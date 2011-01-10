@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace SharpArchitecture-MultiTenant.Web.Controllers
+namespace SharpArchitecture.MultiTenant.Web.Controllers
 {
     [HandleError]
     public class HomeController : Controller

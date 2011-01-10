@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
-using SharpArchitecture-MultiTenant.Web.Controllers;
+using SharpArchitecture.MultiTenant.Web.Controllers;
 using MvcContrib.TestHelper;
 using System.Web.Routing;
 
-namespace Tests.SharpArchitecture-MultiTenant.Controllers
+namespace Tests.SharpArchitecture.MultiTenant.Controllers
 {
     [TestFixture]
     public class RouteRegistrarTests

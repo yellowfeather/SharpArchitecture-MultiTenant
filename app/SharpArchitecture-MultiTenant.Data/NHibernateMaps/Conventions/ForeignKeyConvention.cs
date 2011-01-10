@@ -1,7 +1,7 @@
 ﻿using System;
 using FluentNHibernate;
 
-namespace SharpArchitecture-MultiTenant.Data.NHibernateMaps.Conventions
+namespace SharpArchitecture.MultiTenant.Data.NHibernateMaps.Conventions
 {
     public class ForeignKeyConvention : FluentNHibernate.Conventions.ForeignKeyConvention
     {

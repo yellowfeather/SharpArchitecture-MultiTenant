@@ -6,18 +6,13 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BC94CA49-93AB-45AE-909C-213B4DC8498B}</ProjectGuid>
+    <ProjectGuid>{63E9AECE-3385-44F0-BDF9-4C01DD3C0647}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SharpArch.Scaffolding</RootNamespace>
-    <AssemblyName>SharpArch.Scaffolding</AssemblyName>
+    <RootNamespace>SharpArchitecture-MultiTenant.Data</RootNamespace>
+    <AssemblyName>SharpArchitecture-MultiTenant.Data</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <FileUpgradeFlags>
-    </FileUpgradeFlags>
-    <UpgradeBackupLocation>
-    </UpgradeBackupLocation>
-    <OldToolsVersion>3.5</OldToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -27,7 +22,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -36,16 +30,21 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\PublicAssemblies\EnvDTE.dll</HintPath>
+    <Reference Include="FluentNHibernate, Version=1.2.0.694, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\FluentNHibernate.dll</HintPath>
     </Reference>
     <Reference Include="Inflector.Net, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Inflector.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\..\lib\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="SharpArch, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\lib\SharpArch.dll</HintPath>
@@ -70,46 +69,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="EntityScaffoldingDetails.tt">
-    </None>
-    <None Include="ScaffoldingGeneratorCommand.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ScaffoldingGeneratorCommand.txt</LastGenOutput>
-    </None>
-    <None Include="Templates\BaseTemplate.tt">
-    </None>
-    <None Include="Templates\Web\Controllers\AreaRegistrationTemplate.tt">
-    </None>
-    <None Include="Templates\Web\Controllers\ControllerTemplate.tt">
-    </None>
-    <None Include="Templates\Core\DomainObjectTemplate.tt">
-    </None>
-    <None Include="Templates\ScaffoldingGenerator.tt" />
-    <None Include="Templates\Tests\Web\Controllers\ControllerTestsTemplate.tt">
-    </None>
-    <None Include="Templates\Tests\Core\DomainObjectTestsTemplate.tt">
-    </None>
-    <None Include="Templates\Web\Views\CreateTemplate.tt">
-    </None>
-    <None Include="Templates\Web\Views\EditTemplate.tt">
-    </None>
-    <None Include="Templates\Web\Views\DomainObjectFormTemplate.tt">
-    </None>
-    <None Include="Templates\Web\Views\IndexTemplate.tt">
-    </None>
-    <None Include="Templates\Web\Views\ShowTemplate.tt">
-    </None>
+    <ProjectReference Include="..\SharpArchitecture-MultiTenant.Core\SharpArchitecture-MultiTenant.Core.csproj">
+      <Project>{7696B4F6-2A10-40C4-A1E2-B9768182588C}</Project>
+      <Name>SharpArchitecture-MultiTenant.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ScaffoldingGeneratorCommand.txt">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ScaffoldingGeneratorCommand.tt</DependentUpon>
-    </Content>
+    <Compile Include="NHibernateMaps\AutoPersistenceModelGenerator.cs" />
+    <Compile Include="NHibernateMaps\AutomappingConfiguration.cs" />
+    <Compile Include="NHibernateMaps\Conventions\ForeignKeyConvention.cs" />
+    <Compile Include="NHibernateMaps\Conventions\HasManyConvention.cs" />
+    <Compile Include="NHibernateMaps\Conventions\HasManyToManyConvention.cs" />
+    <Compile Include="NHibernateMaps\Conventions\ManyToManyTableNameConvention.cs" />
+    <Compile Include="NHibernateMaps\Conventions\PrimaryKeyConvention.cs" />
+    <Compile Include="NHibernateMaps\Conventions\ReferenceConvention.cs" />
+    <Compile Include="NHibernateMaps\Conventions\TableNameConvention.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

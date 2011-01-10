@@ -3,7 +3,7 @@ using FluentNHibernate;
 using FluentNHibernate.Automapping;
 using SharpArch.Core.DomainModel;
 
-namespace SharpArchitecture-MultiTenant.Data.NHibernateMaps
+namespace SharpArchitecture.MultiTenant.Data.NHibernateMaps
 {
     public class AutomappingConfiguration : DefaultAutomappingConfiguration
     {

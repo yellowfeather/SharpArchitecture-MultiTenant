@@ -1,6 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" 
     Inherits="System.Web.Mvc.ViewMasterPage" %>
-<%@ Import Namespace="SharpArchitecture-MultiTenant.Web.Controllers" %>
+<%@ Import Namespace="SharpArchitecture.MultiTenant.Web.Controllers" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -15,7 +15,7 @@
 
     <% // At bottom to facilitate other JS files to be loaded before page-by-page JS is loaded %>
     <asp:ContentPlaceHolder ID="HeadContentPlaceHolder" runat="server">
-        <title>SharpArchitecture-MultiTenant</title>
+        <title>SharpArchitecture.MultiTenant</title>
     </asp:ContentPlaceHolder>
 </head>
 
@@ -30,7 +30,7 @@
                     <p>
                         <%= Html.Image("~/Content/Images/sharp_arch.jpg") %>
                     </p>
-                    <h2>SharpArchitecture-MultiTenant Pages</h2>
+                    <h2>SharpArchitecture.MultiTenant Pages</h2>
                     <ul>
                         <!-- We cannot use Html.ActionLink within a master page to link to a controller while using areas -->
                         <li><%= Html.ActionLinkForAreas<HomeController>(c => c.Index(), "Home") %></li>

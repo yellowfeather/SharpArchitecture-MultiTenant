@@ -1,6 +1,6 @@
 ﻿using FluentNHibernate.Conventions.Inspections;
 
-namespace SharpArchitecture-MultiTenant.Data.NHibernateMaps.Conventions
+namespace SharpArchitecture.MultiTenant.Data.NHibernateMaps.Conventions
 {
     public class ManyToManyTableNameConvention : FluentNHibernate.Conventions.ManyToManyTableNameConvention
     {

@@ -13,11 +13,11 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Reflection;
-using SharpArchitecture-MultiTenant.Web.Controllers;
-using SharpArchitecture-MultiTenant.Data.NHibernateMaps;
-using SharpArchitecture-MultiTenant.Web.CastleWindsor;
+using SharpArchitecture.MultiTenant.Web.Controllers;
+using SharpArchitecture.MultiTenant.Data.NHibernateMaps;
+using SharpArchitecture.MultiTenant.Web.CastleWindsor;
 
-namespace SharpArchitecture-MultiTenant.Web
+namespace SharpArchitecture.MultiTenant.Web
 {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode,
     // visit http://go.microsoft.com/?LinkId=9394801
@@ -84,7 +84,7 @@ namespace SharpArchitecture-MultiTenant.Web
         {
             NHibernateSession.Init(
                 webSessionStorage,
-                new string[] { Server.MapPath("~/bin/SharpArchitecture-MultiTenant.Data.dll") },
+                new string[] { Server.MapPath("~/bin/SharpArchitecture.MultiTenant.Data.dll") },
                 new AutoPersistenceModelGenerator().Generate(),
                 Server.MapPath("~/NHibernate.config"));
         }

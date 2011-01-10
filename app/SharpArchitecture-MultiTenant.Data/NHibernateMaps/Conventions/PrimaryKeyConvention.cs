@@ -1,7 +1,7 @@
 ﻿using FluentNHibernate.Conventions;
 using FluentNHibernate.Mapping;
 
-namespace SharpArchitecture-MultiTenant.Data.NHibernateMaps.Conventions
+namespace SharpArchitecture.MultiTenant.Data.NHibernateMaps.Conventions
 {
     public class PrimaryKeyConvention : IIdConvention
     {

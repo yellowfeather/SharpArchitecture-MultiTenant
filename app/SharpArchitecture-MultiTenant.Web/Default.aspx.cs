@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using System.Web.UI;
 
-namespace SharpArchitecture-MultiTenant.Web
+namespace SharpArchitecture.MultiTenant.Web
 {
     public partial class _Default : Page
     {

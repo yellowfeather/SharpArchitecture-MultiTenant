@@ -1,7 +1,7 @@
 ﻿using SharpArch.Core.PersistenceSupport;
 using SharpArch.Core.DomainModel;
 
-namespace Tests.SharpArchitecture-MultiTenant.Data.TestDoubles
+namespace Tests.SharpArchitecture.MultiTenant.Data.TestDoubles
 {
     /// <summary>
     /// A test double for <see cref="IEntityDuplicateChecker" />.  The default implementation

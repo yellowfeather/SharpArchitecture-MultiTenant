@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true"
     Inherits="System.Web.Mvc.ViewPage" %>
-<%@ Import Namespace="SharpArchitecture-MultiTenant.Web.Controllers" %>
+<%@ Import Namespace="SharpArchitecture.MultiTenant.Web.Controllers" %>
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
     <h2>S#arp Architecture Project</h2>
@@ -12,20 +12,20 @@
         <ol>
             <li>
                 <span style="font-weight:bold; font-style:italic">Create your database and set the connection string
-                within SharpArchitecture-MultiTenant.Web/NHibernate.config</span>
+                within SharpArchitecture.MultiTenant.Web/NHibernate.config</span>
 	        </li>
             <li>
-                Optionally, modify the Fluent NHibernate preferences within SharpArchitecture-MultiTenant.Data.NHibernateMaps.GetConventions()
+                Optionally, modify the Fluent NHibernate preferences within SharpArchitecture.MultiTenant.Data.NHibernateMaps.GetConventions()
                 if you don't like the default settings.  There's lots of terrific info about Fluent NHibernate
                 at <a href="http://wiki.fluentnhibernate.org/show/HomePage">http://wiki.fluentnhibernate.org/show/HomePage</a>.
 	        </li>
             <li>
-                Open SharpArchitecture-MultiTenant.Tests.dll via NUnit and make sure all the tests are turning green.
+                Open SharpArchitecture.MultiTenant.Tests.dll via NUnit and make sure all the tests are turning green.
 	        </li>
             <li>
                 Add your first entity with CRUD scaffolding via /Code Generation/CrudScaffolding/ScaffoldingGeneratorCommand.tt.
                 (If you include a namespace, be sure to setup the appropriate view area within
-                SharpArchitecture-MultiTenant.Web.Controllers.RouteRegistrar.RegisterRoutesTo() after the scaffolding generator has completed.)
+                SharpArchitecture.MultiTenant.Web.Controllers.RouteRegistrar.RegisterRoutesTo() after the scaffolding generator has completed.)
 	        </li>
         </ol>
     </p>

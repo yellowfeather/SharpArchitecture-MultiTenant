@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace SharpArchitecture-MultiTenant.Web.Controllers
+namespace SharpArchitecture.MultiTenant.Web.Controllers
 {
     public class RouteRegistrar
     {

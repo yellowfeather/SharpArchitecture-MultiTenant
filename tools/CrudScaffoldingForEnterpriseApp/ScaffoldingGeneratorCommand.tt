@@ -12,7 +12,7 @@
 /*
  * Domain name should be PascalCaseSingular with no spaces.
  * You may qualify the domain object with a namespace; a folder structure reflecting the namespace structure will be created (or verified).
- * A log of created artifacts may be found in /SharpArchitecture-MultiTenant/logs/CrudScaffolding.log
+ * A log of created artifacts may be found in /SharpArchitecture.MultiTenant/logs/CrudScaffolding.log
  * Examples:  Product, Organization.Employee, Financial.Costs.LedgerEntry
  */
 EntityScaffoldingDetails entityScaffoldingDetails =
@@ -39,7 +39,7 @@ entityScaffoldingDetails.EntityProperties.Add(
 
 // The first parameter should reflect the root directory of your solution
 ScaffoldingGenerator generator = new ScaffoldingGenerator(
-	@"C:\Projects\SharpArchitecture-MultiTenant\", "SharpArchitecture-MultiTenant", entityScaffoldingDetails); 
+	@"C:\Projects\SharpArchitecture.MultiTenant\", "SharpArchitecture.MultiTenant", entityScaffoldingDetails); 
 
 // Uncomment this line when you're ready for the scaffolding generator to fire...be sure to recomment after it completes to avoid accidental generating!
 //generator.Run();

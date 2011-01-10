@@ -2,14 +2,14 @@
 using NHibernate;
 using NHibernate.Metadata;
 using NUnit.Framework;
-using SharpArchitecture-MultiTenant.Data.NHibernateMaps;
+using SharpArchitecture.MultiTenant.Data.NHibernateMaps;
 using SharpArch.Data.NHibernate;
 using SharpArch.Testing.NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
 using System.IO;
 
-namespace Tests.SharpArchitecture-MultiTenant.Data.NHibernateMaps
+namespace Tests.SharpArchitecture.MultiTenant.Data.NHibernateMaps
 {
     /// <summary>
     /// Provides a means to verify that the target database is in compliance with all mappings.
@@ -28,7 +28,7 @@ namespace Tests.SharpArchitecture-MultiTenant.Data.NHibernateMaps
             string[] mappingAssemblies = RepositoryTestsHelper.GetMappingAssemblies();
             configuration = NHibernateSession.Init(new SimpleSessionStorage(), mappingAssemblies,
                                    new AutoPersistenceModelGenerator().Generate(),
-                                   "../../../../app/SharpArchitecture-MultiTenant.Web/NHibernate.config");
+                                   "../../../../app/SharpArchitecture.MultiTenant.Web/NHibernate.config");
         }
 
         [TearDown]

@@ -7,7 +7,7 @@ using Castle.MicroKernel.Registration;
 using SharpArch.Core.CommonValidator;
 using SharpArch.Core.NHibernateValidator.CommonValidatorAdapter;
 
-namespace SharpArchitecture-MultiTenant.Web.CastleWindsor
+namespace SharpArchitecture.MultiTenant.Web.CastleWindsor
 {
     public class ComponentRegistrar
     {
@@ -28,7 +28,7 @@ namespace SharpArchitecture-MultiTenant.Web.CastleWindsor
         {
             container.Register(
                 AllTypes
-                .FromAssemblyNamed("SharpArchitecture-MultiTenant.ApplicationServices")
+                .FromAssemblyNamed("SharpArchitecture.MultiTenant.ApplicationServices")
                 .Pick()
                 .WithService.FirstInterface());
         }
@@ -37,9 +37,9 @@ namespace SharpArchitecture-MultiTenant.Web.CastleWindsor
         {
             container.Register(
                 AllTypes
-                .FromAssemblyNamed("SharpArchitecture-MultiTenant.Data")
+                .FromAssemblyNamed("SharpArchitecture.MultiTenant.Data")
                 .Pick()
-                .WithService.FirstNonGenericCoreInterface("SharpArchitecture-MultiTenant.Core"));
+                .WithService.FirstNonGenericCoreInterface("SharpArchitecture.MultiTenant.Core"));
         }
 
         private static void AddGenericRepositoriesTo(IWindsorContainer container)

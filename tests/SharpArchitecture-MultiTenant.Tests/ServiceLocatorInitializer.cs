@@ -4,7 +4,7 @@ using SharpArch.Core.NHibernateValidator.CommonValidatorAdapter;
 using CommonServiceLocator.WindsorAdapter;
 using Microsoft.Practices.ServiceLocation;
 using SharpArch.Core.PersistenceSupport;
-using Tests.SharpArchitecture-MultiTenant.Data.TestDoubles;
+using Tests.SharpArchitecture.MultiTenant.Data.TestDoubles;
 
 namespace Tests
 {
