@@ -9,7 +9,7 @@
     <ProjectGuid>{518B2E4B-2B9B-48EF-8736-DDB6A0F78E79}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SharpArchitecture-MultiTenant.Web.Controllers</RootNamespace>
+    <RootNamespace>SharpArchitecture.MultiTenant.Web.Controllers</RootNamespace>
     <AssemblyName>SharpArchitecture.MultiTenant.Web.Controllers</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

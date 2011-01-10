@@ -9,7 +9,7 @@
     <ProjectGuid>{63E9AECE-3385-44F0-BDF9-4C01DD3C0647}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SharpArchitecture-MultiTenant.Data</RootNamespace>
+    <RootNamespace>SharpArchitecture.MultiTenant.Data</RootNamespace>
     <AssemblyName>SharpArchitecture.MultiTenant.Data</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

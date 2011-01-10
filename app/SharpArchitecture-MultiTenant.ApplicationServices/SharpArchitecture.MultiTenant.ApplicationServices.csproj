@@ -9,7 +9,7 @@
     <ProjectGuid>{EA00777D-3D7A-4406-8BFB-E5A90CF0E8A9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SharpArchitecture-MultiTenant.ApplicationServices</RootNamespace>
+    <RootNamespace>SharpArchitecture.MultiTenant.ApplicationServices</RootNamespace>
     <AssemblyName>SharpArchitecture.MultiTenant.ApplicationServices</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
