@@ -1,7 +1,7 @@
 using Microsoft.Practices.ServiceLocation;
 using SharpArchitecture.MultiTenant.Framework.Services;
 
-namespace SharpArchitecture.MultiTenant.Framework
+namespace SharpArchitecture.MultiTenant.Framework.NHibernate
 {
   public class TransactionAttribute : SharpArch.Web.NHibernate.TransactionAttribute
   {
@@ -14,8 +14,8 @@ namespace SharpArchitecture.MultiTenant.Framework
     {
       get
       {
-        var accountContext = ServiceLocator.Current.GetInstance<ITenantContext>();
-        return accountContext.Key;
+        var tenantContext = ServiceLocator.Current.GetInstance<ITenantContext>();
+        return tenantContext.Key;
       }
     }
   }
