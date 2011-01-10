@@ -1,0 +1,51 @@
+﻿8:36:40 AM	MoveCommonAssemblyInfoToRoot: Moving CommonAssemblyInfo.cs from C:\Projects\SharpArchitecture-MultiTenant\SolutionItemsContainer\CommonAssemblyInfo.cs to root at C:\Projects\SharpArchitecture-MultiTenant\CommonAssemblyInfo.cs
+8:36:40 AM	MoveSolutionItemsToLib: Moving solution items from C:\Projects\SharpArchitecture-MultiTenant\SolutionItemsContainer\Solution Items to lib at C:\Projects\SharpArchitecture-MultiTenant\lib
+8:36:41 AM	MoveSolutionItemsToToolsLib: Moving tools solution items from C:\Projects\SharpArchitecture-MultiTenant\ToolsSolutionItemsContainer\Solution Items to tools lib at C:\Projects\SharpArchitecture-MultiTenant\tools\lib
+8:36:43 AM	MoveProjectTo: Removing SharpArchitecture-MultiTenant.Core from solution
+8:36:43 AM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Projects\SharpArchitecture-MultiTenant\SharpArchitecture-MultiTenant.Core\SharpArchitecture-MultiTenant.Core.csproj
+8:36:43 AM	MoveProjectTo: Moving SharpArchitecture-MultiTenant.Core from C:\Projects\SharpArchitecture-MultiTenant\SharpArchitecture-MultiTenant.Core to target location at C:\Projects\SharpArchitecture-MultiTenant\app\SharpArchitecture-MultiTenant.Core
+8:36:43 AM	MoveProjectTo: Adding SharpArchitecture-MultiTenant.Core to solution
+8:36:44 AM	CaptureProjectGuidOf: Does C:\Projects\SharpArchitecture-MultiTenant\app\SharpArchitecture-MultiTenant.Core\SharpArchitecture-MultiTenant.Core.csproj exist? True
+8:36:44 AM	CaptureProjectGuidOf: About to open C:\Projects\SharpArchitecture-MultiTenant\app\SharpArchitecture-MultiTenant.Core\SharpArchitecture-MultiTenant.Core.csproj
+8:36:44 AM	CaptureProjectGuidOf: Captured the GUID {7696B4F6-2A10-40C4-A1E2-B9768182588C} for SharpArchitecture-MultiTenant.Core
+8:36:45 AM	MoveProjectTo: Removing SharpArchitecture-MultiTenant.ApplicationServices from solution
+8:36:45 AM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Projects\SharpArchitecture-MultiTenant\SharpArchitecture-MultiTenant.ApplicationServices\SharpArchitecture-MultiTenant.ApplicationServices.csproj
+8:36:45 AM	MoveProjectTo: Moving SharpArchitecture-MultiTenant.ApplicationServices from C:\Projects\SharpArchitecture-MultiTenant\SharpArchitecture-MultiTenant.ApplicationServices to target location at C:\Projects\SharpArchitecture-MultiTenant\app\SharpArchitecture-MultiTenant.ApplicationServices
+8:36:45 AM	MoveProjectTo: Adding SharpArchitecture-MultiTenant.ApplicationServices to solution
+8:36:46 AM	CaptureProjectGuidOf: Does C:\Projects\SharpArchitecture-MultiTenant\app\SharpArchitecture-MultiTenant.ApplicationServices\SharpArchitecture-MultiTenant.ApplicationServices.csproj exist? True
+8:36:46 AM	CaptureProjectGuidOf: About to open C:\Projects\SharpArchitecture-MultiTenant\app\SharpArchitecture-MultiTenant.ApplicationServices\SharpArchitecture-MultiTenant.ApplicationServices.csproj
+8:36:46 AM	CaptureProjectGuidOf: Captured the GUID {EA00777D-3D7A-4406-8BFB-E5A90CF0E8A9} for SharpArchitecture-MultiTenant.ApplicationServices
+8:36:47 AM	MoveProjectTo: Removing SharpArchitecture-MultiTenant.Data from solution
+8:36:48 AM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Projects\SharpArchitecture-MultiTenant\SharpArchitecture-MultiTenant.Data\SharpArchitecture-MultiTenant.Data.csproj
+8:36:48 AM	MoveProjectTo: Moving SharpArchitecture-MultiTenant.Data from C:\Projects\SharpArchitecture-MultiTenant\SharpArchitecture-MultiTenant.Data to target location at C:\Projects\SharpArchitecture-MultiTenant\app\SharpArchitecture-MultiTenant.Data
+8:36:48 AM	MoveProjectTo: Adding SharpArchitecture-MultiTenant.Data to solution
+8:36:49 AM	CaptureProjectGuidOf: Does C:\Projects\SharpArchitecture-MultiTenant\app\SharpArchitecture-MultiTenant.Data\SharpArchitecture-MultiTenant.Data.csproj exist? True
+8:36:49 AM	CaptureProjectGuidOf: About to open C:\Projects\SharpArchitecture-MultiTenant\app\SharpArchitecture-MultiTenant.Data\SharpArchitecture-MultiTenant.Data.csproj
+8:36:49 AM	CaptureProjectGuidOf: Captured the GUID {63E9AECE-3385-44F0-BDF9-4C01DD3C0647} for SharpArchitecture-MultiTenant.Data
+8:36:49 AM	MoveProjectTo: Removing SharpArchitecture-MultiTenant.Web.Controllers from solution
+8:36:50 AM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Projects\SharpArchitecture-MultiTenant\SharpArchitecture-MultiTenant.Web.Controllers\SharpArchitecture-MultiTenant.Web.Controllers.csproj
+8:36:50 AM	MoveProjectTo: Moving SharpArchitecture-MultiTenant.Web.Controllers from C:\Projects\SharpArchitecture-MultiTenant\SharpArchitecture-MultiTenant.Web.Controllers to target location at C:\Projects\SharpArchitecture-MultiTenant\app\SharpArchitecture-MultiTenant.Web.Controllers
+8:36:50 AM	MoveProjectTo: Adding SharpArchitecture-MultiTenant.Web.Controllers to solution
+8:36:51 AM	CaptureProjectGuidOf: Does C:\Projects\SharpArchitecture-MultiTenant\app\SharpArchitecture-MultiTenant.Web.Controllers\SharpArchitecture-MultiTenant.Web.Controllers.csproj exist? True
+8:36:51 AM	CaptureProjectGuidOf: About to open C:\Projects\SharpArchitecture-MultiTenant\app\SharpArchitecture-MultiTenant.Web.Controllers\SharpArchitecture-MultiTenant.Web.Controllers.csproj
+8:36:51 AM	CaptureProjectGuidOf: Captured the GUID {518B2E4B-2B9B-48EF-8736-DDB6A0F78E79} for SharpArchitecture-MultiTenant.Web.Controllers
+8:36:54 AM	MoveProjectTo: Removing SharpArchitecture-MultiTenant.Tests from solution
+8:36:54 AM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Projects\SharpArchitecture-MultiTenant\SharpArchitecture-MultiTenant.Tests\SharpArchitecture-MultiTenant.Tests.csproj
+8:36:54 AM	MoveProjectTo: Moving SharpArchitecture-MultiTenant.Tests from C:\Projects\SharpArchitecture-MultiTenant\SharpArchitecture-MultiTenant.Tests to target location at C:\Projects\SharpArchitecture-MultiTenant\tests\SharpArchitecture-MultiTenant.Tests
+8:36:54 AM	MoveProjectTo: Adding SharpArchitecture-MultiTenant.Tests to solution
+8:37:03 AM	MoveProjectTo: Removing SharpArchitecture-MultiTenant.Web from solution
+8:37:03 AM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Projects\SharpArchitecture-MultiTenant\SharpArchitecture-MultiTenant.Web\SharpArchitecture-MultiTenant.Web.csproj
+8:37:03 AM	MoveProjectTo: Moving SharpArchitecture-MultiTenant.Web from C:\Projects\SharpArchitecture-MultiTenant\SharpArchitecture-MultiTenant.Web to target location at C:\Projects\SharpArchitecture-MultiTenant\app\SharpArchitecture-MultiTenant.Web
+8:37:03 AM	MoveProjectTo: Adding SharpArchitecture-MultiTenant.Web to solution
+8:37:05 AM	MoveProjectTo: Removing CrudScaffolding from solution
+8:37:06 AM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Projects\SharpArchitecture-MultiTenant\CrudScaffolding\CrudScaffolding.csproj
+8:37:06 AM	MoveProjectTo: Moving CrudScaffolding from C:\Projects\SharpArchitecture-MultiTenant\CrudScaffolding to target location at C:\Projects\SharpArchitecture-MultiTenant\tools\CrudScaffolding
+8:37:06 AM	MoveProjectTo: Adding CrudScaffolding to solution folder C:\Projects\SharpArchitecture-MultiTenant\tools\CrudScaffolding
+8:37:06 AM	ExcludeProjectFromBuildProcess: Setting build to false for project SharpArchitecture-MultiTenant\tools\CrudScaffolding\CrudScaffolding.csproj within the Debug configuration
+8:37:06 AM	ExcludeProjectFromBuildProcess: Setting build to false for project SharpArchitecture-MultiTenant\tools\CrudScaffolding\CrudScaffolding.csproj within the Release configuration
+8:37:06 AM	MoveProjectTo: Removing CrudScaffoldingForEnterpriseApp from solution
+8:37:07 AM	PerformManualProjectReplacementsTo: Going to PerformManualProjectReplacementsTo on C:\Projects\SharpArchitecture-MultiTenant\CrudScaffoldingForEnterpriseApp\CrudScaffoldingForEnterpriseApp.csproj
+8:37:07 AM	MoveProjectTo: Moving CrudScaffoldingForEnterpriseApp from C:\Projects\SharpArchitecture-MultiTenant\CrudScaffoldingForEnterpriseApp to target location at C:\Projects\SharpArchitecture-MultiTenant\tools\CrudScaffoldingForEnterpriseApp
+8:37:07 AM	MoveProjectTo: Adding CrudScaffoldingForEnterpriseApp to solution folder C:\Projects\SharpArchitecture-MultiTenant\tools\CrudScaffoldingForEnterpriseApp
+8:37:07 AM	ExcludeProjectFromBuildProcess: Setting build to false for project SharpArchitecture-MultiTenant\tools\CrudScaffoldingForEnterpriseApp\CrudScaffoldingForEnterpriseApp.csproj within the Debug configuration
+8:37:07 AM	ExcludeProjectFromBuildProcess: Setting build to false for project SharpArchitecture-MultiTenant\tools\CrudScaffoldingForEnterpriseApp\CrudScaffoldingForEnterpriseApp.csproj within the Release configuration
