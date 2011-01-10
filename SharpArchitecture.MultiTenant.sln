@@ -13,12 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpArchitecture.MultiTena
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpArchitecture.MultiTenant.Web", "app\SharpArchitecture-MultiTenant.Web\SharpArchitecture.MultiTenant.Web.csproj", "{CD10C59F-658A-4297-9E52-A431B2E32EE0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Generation", "Code Generation", "{444836E2-F827-47F4-A568-E266FDBD8906}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudScaffolding", "tools\CrudScaffolding\CrudScaffolding.csproj", "{BC94CA49-93AB-45AE-909C-213B4DC8498B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudScaffoldingForEnterpriseApp", "tools\CrudScaffoldingForEnterpriseApp\CrudScaffoldingForEnterpriseApp.csproj", "{D0A5D52D-4397-4DD7-BD20-8FBE3C35288F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,16 +43,8 @@ Global
 		{CD10C59F-658A-4297-9E52-A431B2E32EE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD10C59F-658A-4297-9E52-A431B2E32EE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD10C59F-658A-4297-9E52-A431B2E32EE0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BC94CA49-93AB-45AE-909C-213B4DC8498B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BC94CA49-93AB-45AE-909C-213B4DC8498B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D0A5D52D-4397-4DD7-BD20-8FBE3C35288F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0A5D52D-4397-4DD7-BD20-8FBE3C35288F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{BC94CA49-93AB-45AE-909C-213B4DC8498B} = {444836E2-F827-47F4-A568-E266FDBD8906}
-		{D0A5D52D-4397-4DD7-BD20-8FBE3C35288F} = {444836E2-F827-47F4-A568-E266FDBD8906}
 	EndGlobalSection
 EndGlobal
