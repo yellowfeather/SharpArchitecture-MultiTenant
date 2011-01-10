@@ -28,7 +28,7 @@ namespace Tests.SharpArchitecture.MultiTenant.Data.NHibernateMaps
             string[] mappingAssemblies = RepositoryTestsHelper.GetMappingAssemblies();
             configuration = NHibernateSession.Init(new SimpleSessionStorage(), mappingAssemblies,
                                    new AutoPersistenceModelGenerator().Generate(),
-                                   "../../../../app/SharpArchitecture.MultiTenant.Web/NHibernate.config");
+                                   "../../../../app/SharpArchitecture-MultiTenant.Web/NHibernate.config");
         }
 
         [TearDown]
