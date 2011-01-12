@@ -2,9 +2,9 @@ using System;
 using System.Web.Mvc;
 using MvcContrib;
 using MvcContrib.Filters;
+using SharpArch.Web.NHibernate;
 using SharpArchitecture.MultiTenant.Core;
 using SharpArchitecture.MultiTenant.Core.RepositoryInterfaces;
-using SharpArchitecture.MultiTenant.Framework.NHibernate;
 using SharpArchitecture.MultiTenant.Web.Controllers.Customers.ViewModel;
 
 namespace SharpArchitecture.MultiTenant.Web.Controllers.Customers

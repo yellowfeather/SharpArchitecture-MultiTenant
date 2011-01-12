@@ -1,17 +1,13 @@
 using MvcContrib.Pagination;
 using NHibernate.Criterion;
+using SharpArch.Data.NHibernate;
 using SharpArchitecture.MultiTenant.Core;
 using SharpArchitecture.MultiTenant.Core.RepositoryInterfaces;
-using SharpArchitecture.MultiTenant.Framework.Services;
 
 namespace SharpArchitecture.MultiTenant.Data.Repositories
 {
-  public class CustomerRepository : MultiTenantRepository<Customer>, ICustomerRepository
+  public class CustomerRepository : Repository<Customer>, ICustomerRepository
   {
-    public CustomerRepository(ITenantContext tenantContext) : base(tenantContext)
-    {
-    }
-
     public IPagination<Customer> GetPagedList(int pageIndex, int pageSize)
     {
       var firstResult = (pageIndex - 1) * pageSize;

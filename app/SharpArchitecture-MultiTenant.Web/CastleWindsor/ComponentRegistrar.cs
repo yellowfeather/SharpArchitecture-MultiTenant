@@ -48,11 +48,17 @@ namespace SharpArchitecture.MultiTenant.Web.CastleWindsor
 
         private static void AddGenericRepositoriesTo(IWindsorContainer container)
         {
-            container.Register(
+          container.Register(
                     Component
                         .For(typeof(IEntityDuplicateChecker))
                         .ImplementedBy(typeof(EntityDuplicateChecker))
                         .Named("entityDuplicateChecker"));
+
+            container.Register(
+                    Component
+                        .For(typeof(ISessionFactoryKeyProvider))
+                        .ImplementedBy(typeof(MultiTenantSessionFactoryKeyProvider))
+                        .Named("sessionFactoryKeyProvider"));
 
             container.Register(
                     Component
