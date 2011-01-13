@@ -4,6 +4,7 @@ using FluentNHibernate;
 using FluentNHibernate.Automapping;
 using SharpArch.Core.DomainModel;
 using SharpArchitecture.MultiTenant.Framework.Contracts;
+using SharpArchitecture.MultiTenant.Framework.Extensions;
 
 namespace SharpArchitecture.MultiTenant.Data.NHibernateMaps
 {
@@ -37,7 +38,7 @@ namespace SharpArchitecture.MultiTenant.Data.NHibernateMaps
 
     public bool IsMultiTenantEntity(Type type)
     {
-      return type.GetInterfaces().Any(x => x == typeof (IMultiTenantEntity));
+      return type.IsImplementationOf<IMultiTenantEntity>();
     }
   }
 }
