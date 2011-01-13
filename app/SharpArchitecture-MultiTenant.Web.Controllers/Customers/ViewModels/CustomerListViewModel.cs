@@ -2,7 +2,7 @@
 using MvcContrib.Pagination;
 using SharpArchitecture.MultiTenant.Core;
 
-namespace SharpArchitecture.MultiTenant.Web.Controllers.Customers.ViewModel
+namespace SharpArchitecture.MultiTenant.Web.Controllers.Customers.ViewModels
 {
   public class CustomerListViewModel
   {

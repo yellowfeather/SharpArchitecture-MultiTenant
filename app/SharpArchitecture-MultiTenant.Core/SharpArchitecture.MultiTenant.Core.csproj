@@ -61,10 +61,12 @@
     <Compile Include="..\..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="RepositoryInterfaces\IMultiTenantRepository.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Contracts\IMultiTenantEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryInterfaces\ICustomerRepository.cs" />
+    <Compile Include="RepositoryInterfaces\ITenantRepository.cs" />
     <Compile Include="Tenant.cs" />
   </ItemGroup>
   <ItemGroup />

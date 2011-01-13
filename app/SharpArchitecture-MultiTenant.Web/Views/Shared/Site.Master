@@ -1,6 +1,8 @@
 <%@ Master Language="C#" AutoEventWireup="true" 
     Inherits="System.Web.Mvc.ViewMasterPage" %>
 <%@ Import Namespace="SharpArchitecture.MultiTenant.Web.Controllers" %>
+<%@ Import Namespace="SharpArchitecture.MultiTenant.Web.Controllers.Customers" %>
+<%@ Import Namespace="SharpArchitecture.MultiTenant.Web.Controllers.Tenants" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -32,6 +34,9 @@
                     <ul>
                         <!-- We cannot use Html.ActionLink within a master page to link to a controller while using areas -->
                         <li><%= Html.ActionLinkForAreas<HomeController>(c => c.Index(), "Home") %></li>
+                        <li><%= Html.ActionLink<TenantsController>(c => c.Index(null), "Tenants") %></li>
+                        <li><a href="http://tenant1.lvh.me:1062/customers">Tenant1 Customers</a></li>
+                        <li><a href="http://tenant2.lvh.me:1062/customers">Tenant2 Customers</a></li>
                     </ul>
                 </div>
                 <!--/leftColumn-->
