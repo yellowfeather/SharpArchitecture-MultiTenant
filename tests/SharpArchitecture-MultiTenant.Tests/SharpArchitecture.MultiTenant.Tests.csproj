@@ -77,6 +77,7 @@
       <HintPath>..\..\tools\lib\Rhino.Mocks.dll</HintPath>
     </Reference>
     <Reference Include="SharpArch, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\SharpArch.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -106,9 +107,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SharpArchitecture-MultiTenant.Web\Controllers\RouteRegistrarTests.cs" />
-    <Compile Include="SharpArchitecture-MultiTenant.Data\NHibernateMaps\MappingIntegrationTests.cs" />
-    <Compile Include="SharpArchitecture-MultiTenant.Data\TestDoubles\EntityDuplicateCheckerStub.cs" />
+    <Compile Include="SharpArchitecture.MultiTenant.Framework\NHibernate\MultiTenantSessionFactoryKeyProviderTests.cs" />
+    <Compile Include="SharpArchitecture.MultiTenant.Web\Controllers\RouteRegistrarTests.cs" />
+    <Compile Include="SharpArchitecture.MultiTenant.Data\NHibernateMaps\MappingIntegrationTests.cs" />
+    <Compile Include="SharpArchitecture.MultiTenant.Data\TestDoubles\EntityDuplicateCheckerStub.cs" />
     <Compile Include="..\..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
@@ -123,6 +125,10 @@
       <Project>{EA00777D-3D7A-4406-8BFB-E5A90CF0E8A9}</Project>
       <Name>SharpArchitecture-MultiTenant.ApplicationServices</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\app\SharpArchitecture-MultiTenant.Framework\SharpArchitecture.MultiTenant.Framework.csproj">
+      <Project>{F5A0D972-5870-4EB8-8400-F7F2435AE11C}</Project>
+      <Name>SharpArchitecture.MultiTenant.Framework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\app\SharpArchitecture-MultiTenant.Web.Controllers\SharpArchitecture.MultiTenant.Web.Controllers.csproj">
       <Project>{518B2E4B-2B9B-48EF-8736-DDB6A0F78E79}</Project>
       <Name>SharpArchitecture-MultiTenant.Web.Controllers</Name>
@@ -135,6 +141,10 @@
       <Project>{63E9AECE-3385-44F0-BDF9-4C01DD3C0647}</Project>
       <Name>SharpArchitecture-MultiTenant.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\app\SharpArchitecture-MultiTenant.Web\SharpArchitecture.MultiTenant.Web.csproj">
+      <Project>{CD10C59F-658A-4297-9E52-A431B2E32EE0}</Project>
+      <Name>SharpArchitecture.MultiTenant.Web</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Hibernate.cfg.xml">
@@ -142,7 +152,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="SharpArchitecture-MultiTenant.Core\" />
+    <Folder Include="SharpArchitecture.MultiTenant.Core\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

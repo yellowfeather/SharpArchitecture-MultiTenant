@@ -1,7 +1,9 @@
 using System;
 using System.Linq;
 using SharpArch.Data.NHibernate;
+using SharpArchitecture.MultiTenant.Core.Contracts;
 using SharpArchitecture.MultiTenant.Core.RepositoryInterfaces;
+using SharpArchitecture.MultiTenant.Framework.Extensions;
 using SharpArchitecture.MultiTenant.Framework.Services;
 
 namespace SharpArchitecture.MultiTenant.Framework.NHibernate
@@ -23,15 +25,30 @@ namespace SharpArchitecture.MultiTenant.Framework.NHibernate
 
     public string GetKeyFrom(object anObject)
     {
-      return IsMultiTenantRepository(anObject.GetType()) 
+      var type = anObject.GetType();
+      return IsMultiTenantRepository(type) || IsRepositoryForMultiTenantEntity(type)
         ? GetKey() 
         : NHibernateSession.DefaultFactoryKey;
     }
 
     public bool IsMultiTenantRepository(Type type)
     {
-      return type.GetInterfaces().Any(x => x == typeof(IMultiTenantRepository));
+      return type.IsImplementationOf<IMultiTenantRepository>();
     }
 
+    public bool IsRepositoryForMultiTenantEntity(Type type)
+    {
+      if (!type.IsGenericType) {
+        return false;
+      }
+
+      var genericTypes = type.GetGenericArguments();
+      if (!genericTypes.Any()) {
+        return false;
+      }
+
+      var firstGenericType = genericTypes[0];
+      return firstGenericType.IsImplementationOf<IMultiTenantEntity>();
+    }
   }
 }
