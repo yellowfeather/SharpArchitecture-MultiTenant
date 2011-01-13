@@ -89,11 +89,6 @@ namespace SharpArchitecture.MultiTenant.Web.CastleWindsor
         {
           container.Register(
                   Component
-                      .For(typeof(IMultiTenantInitializer))
-                      .ImplementedBy(typeof(MultiTenantInitializer)));
-
-          container.Register(
-                  Component
                       .For(typeof(ITenantContext))
                       .ImplementedBy(typeof(TenantContext)));
         }

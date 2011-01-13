@@ -4,8 +4,8 @@ using SharpArch.Core.DomainModel;
 using SharpArch.Core.PersistenceSupport;
 using SharpArch.Data.NHibernate;
 using SharpArch.Testing.NUnit;
-using SharpArchitecture.MultiTenant.Core.Contracts;
 using SharpArchitecture.MultiTenant.Core.RepositoryInterfaces;
+using SharpArchitecture.MultiTenant.Framework.Contracts;
 using SharpArchitecture.MultiTenant.Framework.NHibernate;
 using SharpArchitecture.MultiTenant.Framework.Services;
 

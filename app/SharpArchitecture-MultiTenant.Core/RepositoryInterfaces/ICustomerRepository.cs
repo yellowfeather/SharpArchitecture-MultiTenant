@@ -1,5 +1,6 @@
 using MvcContrib.Pagination;
 using SharpArch.Core.PersistenceSupport;
+using SharpArchitecture.MultiTenant.Framework.Contracts;
 
 namespace SharpArchitecture.MultiTenant.Core.RepositoryInterfaces
 {

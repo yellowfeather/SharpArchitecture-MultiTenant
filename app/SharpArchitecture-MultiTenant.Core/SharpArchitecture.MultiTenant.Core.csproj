@@ -61,15 +61,18 @@
     <Compile Include="..\..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="RepositoryInterfaces\IMultiTenantRepository.cs" />
     <Compile Include="Customer.cs" />
-    <Compile Include="Contracts\IMultiTenantEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryInterfaces\ICustomerRepository.cs" />
     <Compile Include="RepositoryInterfaces\ITenantRepository.cs" />
     <Compile Include="Tenant.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SharpArchitecture-MultiTenant.Framework\SharpArchitecture.MultiTenant.Framework.csproj">
+      <Project>{F5A0D972-5870-4EB8-8400-F7F2435AE11C}</Project>
+      <Name>SharpArchitecture.MultiTenant.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

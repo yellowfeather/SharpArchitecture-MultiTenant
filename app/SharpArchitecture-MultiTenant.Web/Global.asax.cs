@@ -1,7 +1,8 @@
-﻿using Castle.Windsor;
+﻿using System.Collections.Generic;
+using Castle.Windsor;
 using CommonServiceLocator.WindsorAdapter;
 using Microsoft.Practices.ServiceLocation;
-
+using SharpArch.Core.PersistenceSupport;
 using SharpArch.Data.NHibernate;
 using SharpArch.Web.NHibernate;
 using SharpArch.Web.Castle;
@@ -13,7 +14,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Reflection;
-using SharpArchitecture.MultiTenant.Framework.Services;
+using SharpArchitecture.MultiTenant.Core;
 using SharpArchitecture.MultiTenant.Web.Controllers;
 using SharpArchitecture.MultiTenant.Data.NHibernateMaps;
 using SharpArchitecture.MultiTenant.Web.CastleWindsor;
@@ -63,7 +64,7 @@ namespace SharpArchitecture.MultiTenant.Web
             base.Init();
 
             // The WebSessionStorage must be created during the Init() to tie in HttpApplication events
-            webSessionStorage = new WebSessionStorage(this);
+            _webSessionStorage = new WebSessionStorage(this);
         }
 
         /// <summary>
@@ -73,8 +74,7 @@ namespace SharpArchitecture.MultiTenant.Web
         /// </summary>
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-            NHibernateInitializer.Instance().InitializeNHibernateOnce(
-                () => InitializeNHibernateSession());
+            NHibernateInitializer.Instance().InitializeNHibernateOnce(InitializeNHibernateSession);
         }
 
         /// <summary>
@@ -87,23 +87,57 @@ namespace SharpArchitecture.MultiTenant.Web
 
           var configFile = Server.MapPath("~/NHibernate.config");
           NHibernateSession.Init(
-                webSessionStorage,
+                _webSessionStorage,
                 mappingAssemblies,
                 new AutoPersistenceModelGenerator().Generate(),
                 configFile);
 
-            var tenantConfigFile = Server.MapPath("~/NHibernate.tenant.config");
-            var multiTenantInitializer = ServiceLocator.Current.GetInstance<IMultiTenantInitializer>();
-            multiTenantInitializer.Initialize(mappingAssemblies, new MultiTenantAutoPersistenceModelGenerator(),  tenantConfigFile);
+          InitializeMultiTenantNHibernateSessions(mappingAssemblies);
+        }
+
+        /// <summary>
+        /// Initializes the multi tenant NHibernate sessions.
+        /// </summary>
+        /// <param name="mappingAssemblies">The mapping assemblies.</param>
+        private void InitializeMultiTenantNHibernateSessions(string[] mappingAssemblies)
+        {
+          var configFile = Server.MapPath("~/NHibernate.tenant.config");
+
+          var tenantRepository = ServiceLocator.Current.GetInstance<IRepository<Tenant>>();
+          var tenants = tenantRepository.GetAll();
+          foreach (var tenant in tenants) {
+            InitializeMultiTenantNHibernateSession(mappingAssemblies, configFile, tenant);
+          }
+        }
+
+        /// <summary>
+        /// Initializes the multi tenant NHibernate session.
+        /// </summary>
+        /// <param name="mappingAssemblies">The mapping assemblies.</param>
+        /// <param name="configFile">The tenant config file.</param>
+        /// <param name="tenant">The tenant.</param>
+        private static void InitializeMultiTenantNHibernateSession(string[] mappingAssemblies, string configFile, Tenant tenant)
+        {
+          var configProperties = new Dictionary<string, string>
+                                {
+                                  {"connection.connection_string", tenant.ConnectionString}
+                                };
+
+          NHibernateSession.AddConfiguration(tenant.Domain,
+                                             mappingAssemblies,
+                                             new MultiTenantAutoPersistenceModelGenerator().Generate(),
+                                             configFile,
+                                             configProperties,
+                                             null, null);
         }
 
         protected void Application_Error(object sender, EventArgs e)
         {
             // Useful for debugging
-            Exception ex = Server.GetLastError();
-            ReflectionTypeLoadException reflectionTypeLoadException = ex as ReflectionTypeLoadException;
+            var ex = Server.GetLastError();
+            var reflectionTypeLoadException = ex as ReflectionTypeLoadException;
         }
 
-        private WebSessionStorage webSessionStorage;
+        private WebSessionStorage _webSessionStorage;
     }
 }

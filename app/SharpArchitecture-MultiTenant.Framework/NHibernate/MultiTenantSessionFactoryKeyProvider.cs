@@ -1,8 +1,7 @@
 using System;
 using System.Linq;
 using SharpArch.Data.NHibernate;
-using SharpArchitecture.MultiTenant.Core.Contracts;
-using SharpArchitecture.MultiTenant.Core.RepositoryInterfaces;
+using SharpArchitecture.MultiTenant.Framework.Contracts;
 using SharpArchitecture.MultiTenant.Framework.Extensions;
 using SharpArchitecture.MultiTenant.Framework.Services;
 

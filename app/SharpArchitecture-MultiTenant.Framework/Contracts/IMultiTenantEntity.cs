@@ -1,4 +1,4 @@
-namespace SharpArchitecture.MultiTenant.Core.Contracts
+namespace SharpArchitecture.MultiTenant.Framework.Contracts
 {
   /// <summary>
   /// Marker interface for multi tenant entities.
