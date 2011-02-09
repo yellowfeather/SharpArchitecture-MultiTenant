@@ -1,4 +1,4 @@
-<%@ Master Language="C#" AutoEventWireup="true" 
+﻿<%@ Master Language="C#" AutoEventWireup="true" 
     Inherits="System.Web.Mvc.ViewMasterPage" %>
 <%@ Import Namespace="SharpArchitecture.MultiTenant.Web.Controllers" %>
 <%@ Import Namespace="SharpArchitecture.MultiTenant.Web.Controllers.Customers" %>

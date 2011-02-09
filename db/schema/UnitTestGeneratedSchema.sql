@@ -1,4 +1,4 @@
-
+﻿
     if exists (select * from dbo.sysobjects where id = object_id(N'Tenants') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table Tenants
 
     if exists (select * from dbo.sysobjects where id = object_id(N'hibernate_unique_key') and OBJECTPROPERTY(id, N'IsUserTable') = 1) drop table hibernate_unique_key

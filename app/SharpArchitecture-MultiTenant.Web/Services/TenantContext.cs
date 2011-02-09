@@ -1,11 +1,11 @@
-using System.Web;
+﻿using System.Web;
 using SharpArchitecture.MultiTenant.Framework.Services;
 
 namespace SharpArchitecture.MultiTenant.Web.Services
 {
   public class TenantContext : ITenantContext
   {
-    private const string DefaultStorageKey = "tenant-context-key";
+    private const string DefaultStorageKey = "csr-tenant-context-key";
 
     public string Key
     {

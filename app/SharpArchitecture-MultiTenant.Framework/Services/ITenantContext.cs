@@ -1,4 +1,4 @@
-namespace SharpArchitecture.MultiTenant.Framework.Services
+﻿namespace SharpArchitecture.MultiTenant.Framework.Services
 {
   public interface ITenantContext
   {

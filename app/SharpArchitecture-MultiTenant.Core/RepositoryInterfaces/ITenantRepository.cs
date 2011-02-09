@@ -1,4 +1,4 @@
-using MvcContrib.Pagination;
+﻿using MvcContrib.Pagination;
 using SharpArch.Core.PersistenceSupport;
 
 namespace SharpArchitecture.MultiTenant.Core.RepositoryInterfaces

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Web.Routing;
 using Castle.Windsor;
 using CommonServiceLocator.WindsorAdapter;
 using Microsoft.Practices.ServiceLocation;
@@ -12,7 +13,6 @@ using SharpArch.Core.NHibernateValidator.ValidatorProvider;
 using System;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Routing;
 using System.Reflection;
 using SharpArchitecture.MultiTenant.Core;
 using SharpArchitecture.MultiTenant.Web.Controllers;

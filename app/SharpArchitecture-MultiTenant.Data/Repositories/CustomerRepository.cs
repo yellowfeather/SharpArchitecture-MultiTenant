@@ -1,4 +1,4 @@
-using MvcContrib.Pagination;
+﻿using MvcContrib.Pagination;
 using NHibernate.Criterion;
 using SharpArch.Data.NHibernate;
 using SharpArchitecture.MultiTenant.Core;

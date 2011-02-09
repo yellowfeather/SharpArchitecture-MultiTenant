@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master"  Inherits="System.Web.Mvc.ViewPage<SharpArchitecture.MultiTenant.Web.Controllers.Tenants.ViewModels.TenantListViewModel>"%>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master"  Inherits="System.Web.Mvc.ViewPage<SharpArchitecture.MultiTenant.Web.Controllers.Tenants.ViewModels.TenantListViewModel>"%>
 <%@ Import Namespace="MvcContrib.UI.Pager" %>
 <%@ Import Namespace="MvcContrib.UI.Grid" %>
 <%@ Import Namespace="SharpArchitecture.MultiTenant.Web.Controllers.Tenants" %>

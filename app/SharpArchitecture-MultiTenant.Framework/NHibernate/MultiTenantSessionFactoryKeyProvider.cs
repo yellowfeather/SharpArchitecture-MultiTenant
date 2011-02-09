@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using SharpArch.Data.NHibernate;
 using SharpArchitecture.MultiTenant.Framework.Contracts;

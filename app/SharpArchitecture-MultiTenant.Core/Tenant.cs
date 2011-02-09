@@ -1,4 +1,4 @@
-using SharpArch.Core.DomainModel;
+﻿using SharpArch.Core.DomainModel;
 
 namespace SharpArchitecture.MultiTenant.Core
 {

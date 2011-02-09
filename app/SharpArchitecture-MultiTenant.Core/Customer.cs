@@ -1,4 +1,4 @@
-using NHibernate.Validator.Constraints;
+﻿using NHibernate.Validator.Constraints;
 using SharpArch.Core.DomainModel;
 using SharpArchitecture.MultiTenant.Framework.Contracts;
 

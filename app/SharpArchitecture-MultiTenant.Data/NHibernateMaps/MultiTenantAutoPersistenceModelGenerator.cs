@@ -1,4 +1,4 @@
-using FluentNHibernate.Automapping;
+﻿using FluentNHibernate.Automapping;
 
 namespace SharpArchitecture.MultiTenant.Data.NHibernateMaps
 {

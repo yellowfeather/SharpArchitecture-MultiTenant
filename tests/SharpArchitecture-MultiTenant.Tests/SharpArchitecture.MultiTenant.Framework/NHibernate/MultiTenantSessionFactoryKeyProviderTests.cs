@@ -1,4 +1,4 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using Rhino.Mocks;
 using SharpArch.Core.DomainModel;
 using SharpArch.Core.PersistenceSupport;

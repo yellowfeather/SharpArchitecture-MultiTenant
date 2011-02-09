@@ -1,4 +1,4 @@
-using SharpArchitecture.MultiTenant.Core;
+﻿using SharpArchitecture.MultiTenant.Core;
 
 namespace SharpArchitecture.MultiTenant.Web.Controllers.Customers.ViewModels
 {
