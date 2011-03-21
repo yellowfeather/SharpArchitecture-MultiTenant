@@ -25,14 +25,12 @@ namespace SharpArchitecture.MultiTenant.Framework.NHibernate
     public string GetKeyFrom(object anObject)
     {
       var type = anObject.GetType();
-      return IsMultiTenantRepository(type) || IsRepositoryForMultiTenantEntity(type)
+      var isMultiTenant = type.IsImplementationOf<IMultiTenantQuery>() ||
+                          type.IsImplementationOf<IMultiTenantRepository>() ||
+                          IsRepositoryForMultiTenantEntity(type);
+      return isMultiTenant
         ? GetKey() 
         : NHibernateSession.DefaultFactoryKey;
-    }
-
-    public bool IsMultiTenantRepository(Type type)
-    {
-      return type.IsImplementationOf<IMultiTenantRepository>();
     }
 
     public bool IsRepositoryForMultiTenantEntity(Type type)

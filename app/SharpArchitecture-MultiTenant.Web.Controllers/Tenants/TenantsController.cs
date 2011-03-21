@@ -2,9 +2,10 @@
 using System.Web.Mvc;
 using MvcContrib;
 using MvcContrib.Filters;
+using SharpArch.Core.PersistenceSupport;
 using SharpArch.Web.NHibernate;
 using SharpArchitecture.MultiTenant.Core;
-using SharpArchitecture.MultiTenant.Core.RepositoryInterfaces;
+using SharpArchitecture.MultiTenant.Web.Controllers.Tenants.Queries;
 using SharpArchitecture.MultiTenant.Web.Controllers.Tenants.ViewModels;
 
 namespace SharpArchitecture.MultiTenant.Web.Controllers.Tenants
@@ -12,19 +13,21 @@ namespace SharpArchitecture.MultiTenant.Web.Controllers.Tenants
   public class TenantsController : Controller
   {
     private const int DefaultPageSize = 20;
-    private readonly ITenantRepository _tenantRepository;
+    private readonly IRepository<Tenant> _tenantRepository;
+    private readonly ITenantListQuery _tenantListQuery;
 
-    public TenantsController(ITenantRepository tenantRepository)
+    public TenantsController(IRepository<Tenant> tenantRepository, ITenantListQuery tenantListQuery)
     {
       _tenantRepository = tenantRepository;
+      _tenantListQuery = tenantListQuery;
     }
 
     [HttpGet]
     [Transaction]
     public ActionResult Index(int? page)
     {
-      var tenants = _tenantRepository.GetPagedList(page ?? 1, DefaultPageSize);
-      var viewModel = new TenantListViewModel(tenants);
+      var viewModels = _tenantListQuery.GetPagedList(page ?? 1, DefaultPageSize);
+      var viewModel = new TenantListViewModel { Tenants = viewModels };
       return View(viewModel);
     }
 

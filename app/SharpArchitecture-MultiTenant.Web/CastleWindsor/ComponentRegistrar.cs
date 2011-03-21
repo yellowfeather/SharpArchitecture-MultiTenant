@@ -1,4 +1,5 @@
-﻿using Castle.Windsor;
+﻿using Castle.Core;
+using Castle.Windsor;
 using SharpArch.Core.PersistenceSupport.NHibernate;
 using SharpArch.Data.NHibernate;
 using SharpArch.Core.PersistenceSupport;
@@ -18,6 +19,7 @@ namespace SharpArchitecture.MultiTenant.Web.CastleWindsor
         {
             AddGenericRepositoriesTo(container);
             AddCustomRepositoriesTo(container);
+            AddQueriesTo(container);
             AddApplicationServicesTo(container);
             AddMultiTenantServicesTo(container);
 
@@ -83,6 +85,15 @@ namespace SharpArchitecture.MultiTenant.Web.CastleWindsor
                         .For(typeof(INHibernateRepositoryWithTypedId<,>))
                         .ImplementedBy(typeof(NHibernateRepositoryWithTypedId<,>))
                         .Named("nhibernateRepositoryWithTypedId"));
+        }
+
+        private static void AddQueriesTo(IWindsorContainer container)
+        {
+          container.Register(
+                 AllTypes.FromAssemblyNamed("SharpArchitecture.MultiTenant.Web.Controllers").Pick()
+                         .If(f => !string.IsNullOrEmpty(f.Namespace) && f.Namespace.Contains(".Queries"))
+                         .Configure(c => c.LifeStyle.Is(LifestyleType.Transient))
+                         .WithService.FirstNonGenericCoreInterface("SharpArchitecture.MultiTenant.Web.Controllers"));
         }
 
         private static void AddMultiTenantServicesTo(IWindsorContainer container)

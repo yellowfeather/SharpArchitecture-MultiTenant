@@ -32,20 +32,6 @@ namespace Tests.SharpArchitecture.MultiTenant.Framework.NHibernate
     }
 
     [Test]
-    public void IsMultiTenantRepositoryReturnsFalseForRepository()
-    {
-      var isMultiTenantRepository = _provider.IsMultiTenantRepository(typeof(ITestRepository));
-      isMultiTenantRepository.ShouldEqual(false);
-    }
-
-    [Test]
-    public void IsMultiTenantRepositoryReturnsTrueForMultiTenantRepository()
-    {
-      var isMultiTenantRepository = _provider.IsMultiTenantRepository(typeof(ITestMultiTenantRepository));
-      isMultiTenantRepository.ShouldEqual(true);
-    }
-
-    [Test]
     public void IsRepositoryForMultiTenantEntityReturnsFlaseForRepositoryForEntity()
     {
       var isRepositoryForMultiTenantEntity = _provider.IsRepositoryForMultiTenantEntity(typeof(IRepository<TestEntity>));

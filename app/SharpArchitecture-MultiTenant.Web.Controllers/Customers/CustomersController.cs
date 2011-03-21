@@ -2,9 +2,10 @@
 using System.Web.Mvc;
 using MvcContrib;
 using MvcContrib.Filters;
+using SharpArch.Core.PersistenceSupport;
 using SharpArch.Web.NHibernate;
 using SharpArchitecture.MultiTenant.Core;
-using SharpArchitecture.MultiTenant.Core.RepositoryInterfaces;
+using SharpArchitecture.MultiTenant.Web.Controllers.Customers.Queries;
 using SharpArchitecture.MultiTenant.Web.Controllers.Customers.ViewModels;
 
 namespace SharpArchitecture.MultiTenant.Web.Controllers.Customers
@@ -12,10 +13,12 @@ namespace SharpArchitecture.MultiTenant.Web.Controllers.Customers
   public class CustomersController : Controller
   {
     private const int DefaultPageSize = 20;
-    private readonly ICustomerRepository _customerRepository;
+    private readonly ICustomerListQuery _customerListQuery;
+    private readonly IRepository<Customer> _customerRepository;
 
-    public CustomersController(ICustomerRepository customerRepository)
+    public CustomersController(ICustomerListQuery customerListQuery, IRepository<Customer> customerRepository)
     {
+      _customerListQuery = customerListQuery;
       _customerRepository = customerRepository;
     }
 
@@ -23,8 +26,8 @@ namespace SharpArchitecture.MultiTenant.Web.Controllers.Customers
     [Transaction]
     public ActionResult Index(int? page)
     {
-      var customers = _customerRepository.GetPagedList(page ?? 1, DefaultPageSize);
-      var viewModel = new CustomerListViewModel(customers);
+      var customers = _customerListQuery.GetPagedList(page ?? 1, DefaultPageSize);
+      var viewModel = new CustomerListViewModel { Customers = customers };
       return View(viewModel);
     }
 

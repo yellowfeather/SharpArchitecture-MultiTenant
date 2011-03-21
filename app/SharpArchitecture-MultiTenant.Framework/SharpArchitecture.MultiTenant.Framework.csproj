@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IMultiTenantQuery.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="NHibernate\MultiTenantSessionFactoryKeyProvider.cs" />
     <Compile Include="Contracts\IMultiTenantEntity.cs" />
