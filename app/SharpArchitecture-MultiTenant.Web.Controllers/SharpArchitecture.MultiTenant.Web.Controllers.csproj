@@ -68,6 +68,7 @@
     <Compile Include="Customers\CustomersController.cs" />
     <Compile Include="Customers\ViewModels\CustomerFormViewModel.cs" />
     <Compile Include="Customers\ViewModels\CustomerViewModel.cs" />
+    <Compile Include="Customers\ViewModels\ImportCustomersFormViewModel.cs" />
     <Compile Include="HomeController.cs" />
     <Compile Include="..\..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>

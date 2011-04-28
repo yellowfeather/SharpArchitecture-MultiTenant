@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Routing;
+using System.Web.Security;
 using Castle.Windsor;
 using CommonServiceLocator.WindsorAdapter;
 using Microsoft.Practices.ServiceLocation;
@@ -75,8 +76,23 @@ namespace SharpArchitecture.MultiTenant.Web
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
             NHibernateInitializer.Instance().InitializeNHibernateOnce(InitializeNHibernateSession);
+
+            const string authParamName = "token";
+            if (HttpContext.Current.Request.Form[authParamName] == null) {
+              return;
+            }
+
+            // required for uploading files 
+            var authCookieName = FormsAuthentication.FormsCookieName;
+            UpdateCookie(authCookieName, HttpContext.Current.Request.Form[authParamName]);
         }
 
+        private static void UpdateCookie(string cookieName, string cookieValue)
+        {
+          var cookie = HttpContext.Current.Request.Cookies.Get(cookieName) ?? new HttpCookie(cookieName);
+          cookie.Value = cookieValue;
+          HttpContext.Current.Request.Cookies.Set(cookie);
+        }
         /// <summary>
         /// If you need to communicate to multiple databases, you'd add a line to this method to
         /// initialize the other database as well.

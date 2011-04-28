@@ -7,6 +7,7 @@
     <h2>List of Customers</h2>
 
     <%= Html.ActionLink<CustomersController>(x => x.Create(), "New Customer", new { @class="medium button" }) %>
+    <%= Html.ActionLink<CustomersController>(x => x.Import(), "Import Customers", new { @class="medium button" }) %>
 
     <%= Html.Grid(Model.Customers)
         .Columns(column =>

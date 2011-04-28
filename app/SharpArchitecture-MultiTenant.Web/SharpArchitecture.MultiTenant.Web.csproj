@@ -19,6 +19,7 @@
     <OldToolsVersion>4.0</OldToolsVersion>
     <UpgradeBackupLocation />
     <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -127,6 +128,7 @@
     <Compile Include="Services\TenantContext.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\cancel.png" />
     <Content Include="Content\Images\sharp_arch.jpg" />
     <Content Include="Content\Images\sharp_arch_small.gif" />
     <Content Include="Default.aspx" />
@@ -135,6 +137,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Scripts\expressInstall.swf" />
+    <Content Include="Scripts\jquery.uploadify.v2.1.4.min.js" />
+    <Content Include="Scripts\swfobject.js" />
+    <Content Include="Scripts\uploadify.allglyphs.swf" />
+    <Content Include="Scripts\uploadify.swf" />
+    <Content Include="Views\Customers\Import.aspx" />
     <Content Include="Views\Customers\Delete.aspx" />
     <Content Include="Views\Customers\Edit.aspx" />
     <Content Include="Views\Customers\Create.aspx" />
@@ -175,6 +183,12 @@
     <Content Include="NHibernate.tenant.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\uploadify.fla" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

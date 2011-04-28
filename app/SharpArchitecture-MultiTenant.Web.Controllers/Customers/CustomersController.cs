@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Web;
 using System.Web.Mvc;
 using MvcContrib;
 using MvcContrib.Filters;
 using SharpArch.Core.PersistenceSupport;
 using SharpArch.Web.NHibernate;
+using SharpArchitecture.MultiTenant.ApplicationServices.Commands;
 using SharpArchitecture.MultiTenant.Core;
+using SharpArchitecture.MultiTenant.Framework.Commands;
 using SharpArchitecture.MultiTenant.Web.Controllers.Customers.Queries;
 using SharpArchitecture.MultiTenant.Web.Controllers.Customers.ViewModels;
 
@@ -13,11 +16,13 @@ namespace SharpArchitecture.MultiTenant.Web.Controllers.Customers
   public class CustomersController : Controller
   {
     private const int DefaultPageSize = 20;
+    private readonly IBus _bus;
     private readonly ICustomerListQuery _customerListQuery;
     private readonly IRepository<Customer> _customerRepository;
 
-    public CustomersController(ICustomerListQuery customerListQuery, IRepository<Customer> customerRepository)
+    public CustomersController(IBus bus, ICustomerListQuery customerListQuery, IRepository<Customer> customerRepository)
     {
+      _bus = bus;
       _customerListQuery = customerListQuery;
       _customerRepository = customerRepository;
     }
@@ -131,6 +136,44 @@ namespace SharpArchitecture.MultiTenant.Web.Controllers.Customers
       }
 
       return this.RedirectToAction(c => c.Index(null));
+    }
+
+    [HttpGet]
+    public ActionResult Import()
+    {
+      var viewModel = new ImportCustomersFormViewModel();
+      return View(viewModel);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    [Transaction]
+    public ActionResult Import(ImportCustomersFormViewModel viewModel)
+    {
+      if (!ViewData.ModelState.IsValid) {
+        return View(viewModel);
+      }
+
+      var command = new ImportCustomersCommand(viewModel.UploadKey);
+      _bus.Send(command);
+
+      var result = command.Result;
+      if (result.Success) {
+        return RedirectToAction("Index");
+      }
+
+      return View(viewModel);
+    }
+
+    // [HttpPost]
+    [Transaction]
+    public ActionResult Upload(Guid uploadKey, HttpPostedFileBase fileData)
+    {
+      var command = new UploadFileCommand(uploadKey, fileData, ControllerContext.HttpContext.User.Identity.Name);
+      _bus.Send(command);
+
+      var result = command.Result;
+      return Json(new { Status = result.Success ? "OK" : "Error" }); 
     }
   }
 }

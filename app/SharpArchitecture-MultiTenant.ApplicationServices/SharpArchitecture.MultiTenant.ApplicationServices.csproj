@@ -41,6 +41,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -54,12 +55,24 @@
     <Compile Include="..\..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="CommandHandlers\UploadFileCommandHandler.cs" />
+    <Compile Include="Commands\ImportCustomersCommand.cs" />
+    <Compile Include="CommandHandlers\ImportCustomersCommandHandler.cs" />
+    <Compile Include="Commands\ImportCustomersCommandResult.cs" />
+    <Compile Include="Commands\UploadFileCommand.cs" />
+    <Compile Include="Commands\UploadFileCommandResult.cs" />
+    <Compile Include="DiskFileStore.cs" />
+    <Compile Include="IFileStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SharpArchitecture-MultiTenant.Core\SharpArchitecture.MultiTenant.Core.csproj">
       <Project>{7696B4F6-2A10-40C4-A1E2-B9768182588C}</Project>
       <Name>SharpArchitecture-MultiTenant.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharpArchitecture-MultiTenant.Framework\SharpArchitecture.MultiTenant.Framework.csproj">
+      <Project>{F5A0D972-5870-4EB8-8400-F7F2435AE11C}</Project>
+      <Name>SharpArchitecture.MultiTenant.Framework</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

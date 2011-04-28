@@ -7,6 +7,7 @@ using SharpArch.Web.Castle;
 using Castle.MicroKernel.Registration;
 using SharpArch.Core.CommonValidator;
 using SharpArch.Core.NHibernateValidator.CommonValidatorAdapter;
+using SharpArchitecture.MultiTenant.Framework.Commands;
 using SharpArchitecture.MultiTenant.Framework.NHibernate;
 using SharpArchitecture.MultiTenant.Framework.Services;
 using SharpArchitecture.MultiTenant.Web.Services;
@@ -21,7 +22,14 @@ namespace SharpArchitecture.MultiTenant.Web.CastleWindsor
             AddCustomRepositoriesTo(container);
             AddQueriesTo(container);
             AddApplicationServicesTo(container);
+            AddCommandHandlersTo(container);
             AddMultiTenantServicesTo(container);
+
+            container.Register(
+                Component
+                    .For(typeof(IBus))
+                    .ImplementedBy(typeof(Bus))
+                    .Named("bus"));
 
             container.Register(
                 Component
@@ -30,13 +38,23 @@ namespace SharpArchitecture.MultiTenant.Web.CastleWindsor
                     .Named("validator"));
         }
 
-      private static void AddApplicationServicesTo(IWindsorContainer container)
+        private static void AddApplicationServicesTo(IWindsorContainer container)
         {
             container.Register(
                 AllTypes
                 .FromAssemblyNamed("SharpArchitecture.MultiTenant.ApplicationServices")
                 .Pick()
+                .If(f => !string.IsNullOrEmpty(f.Namespace) && !f.Namespace.Contains(".Commands"))
                 .WithService.FirstInterface());
+        }
+
+        private static void AddCommandHandlersTo(IWindsorContainer container)
+        {
+          container.Register(
+            AllTypes.FromAssemblyNamed("SharpArchitecture.MultiTenant.ApplicationServices").Pick()
+              .If(f => !string.IsNullOrEmpty(f.Namespace) && f.Namespace.Contains(".CommandHandlers"))
+              .Configure(c => c.LifeStyle.Is(LifestyleType.Transient))
+              .WithService.FirstInterface());
         }
 
         private static void AddCustomRepositoriesTo(IWindsorContainer container)
