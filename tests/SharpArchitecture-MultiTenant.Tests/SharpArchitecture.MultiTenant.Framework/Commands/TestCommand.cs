@@ -2,7 +2,7 @@
 
 namespace Tests.SharpArchitecture.MultiTenant.Framework.Commands
 {
-  public class TestCommand : CommandBase<TestCommandResult>
+  public class TestCommand : ICommand
   {
     public string Data { get; set; }
   }

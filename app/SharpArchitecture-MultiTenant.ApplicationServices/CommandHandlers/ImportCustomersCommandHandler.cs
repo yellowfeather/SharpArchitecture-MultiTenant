@@ -5,7 +5,7 @@ using SharpArchitecture.MultiTenant.Framework.Commands;
 
 namespace SharpArchitecture.MultiTenant.ApplicationServices.CommandHandlers
 {
-  public class ImportCustomersCommandHandler : IMessageHandler<ImportCustomersCommand>
+  public class ImportCustomersCommandHandler : ICommandHandler<ImportCustomersCommand>
   {
     private readonly IRepository<Customer> _customerRepository;
 
@@ -14,7 +14,7 @@ namespace SharpArchitecture.MultiTenant.ApplicationServices.CommandHandlers
       _customerRepository = customerRepository;
     }
 
-    public void Handle(ImportCustomersCommand command)
+    public ICommandResult Handle(ImportCustomersCommand command)
     {
       // get uploaded files by command.UploadKey
 
@@ -25,7 +25,7 @@ namespace SharpArchitecture.MultiTenant.ApplicationServices.CommandHandlers
       _customerRepository.SaveOrUpdate(new Customer { Code = "DEF", Name = "DEF" });
       _customerRepository.SaveOrUpdate(new Customer { Code = "XYZ", Name = "XYZ" });
 
-      command.Result = new ImportCustomersCommandResult(true);
+      return new ImportCustomersCommandResult(true);
     }
   }
 }

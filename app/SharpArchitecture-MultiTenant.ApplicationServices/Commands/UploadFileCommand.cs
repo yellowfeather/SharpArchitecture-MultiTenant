@@ -4,7 +4,7 @@ using SharpArchitecture.MultiTenant.Framework.Commands;
 
 namespace SharpArchitecture.MultiTenant.ApplicationServices.Commands
 {
-  public class UploadFileCommand : CommandBase<UploadFileCommandResult>
+  public class UploadFileCommand : ICommand
   {
     public UploadFileCommand(Guid groupId, HttpPostedFileBase fileData, string username)
     {

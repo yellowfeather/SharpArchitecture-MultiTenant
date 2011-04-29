@@ -40,8 +40,10 @@
     <Reference Include="MvcContrib, Version=2.0.96.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\lib\MvcContrib.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate, Version=3.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL" />
-    <Reference Include="SharpArch, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="NHibernate">
+      <HintPath>..\..\lib\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpArch">
       <HintPath>..\..\lib\SharpArch.dll</HintPath>
     </Reference>
     <Reference Include="System" />

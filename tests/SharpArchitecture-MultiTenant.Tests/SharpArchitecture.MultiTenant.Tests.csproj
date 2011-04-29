@@ -105,12 +105,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\BusTests.cs" />
-    <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\GenericMessageHandler.cs" />
-    <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\TestCommand.cs" />
+    <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\CommandProcessorTests.cs" />
     <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\TestCommandHandler.cs" />
+    <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\TestCommand.cs" />
     <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\TestCommandResult.cs" />
-    <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\TestMessage.cs" />
     <Compile Include="SharpArchitecture.MultiTenant.Framework\NHibernate\MultiTenantSessionFactoryKeyProviderTests.cs" />
     <Compile Include="SharpArchitecture.MultiTenant.Web\Controllers\RouteRegistrarTests.cs" />
     <Compile Include="SharpArchitecture.MultiTenant.Data\NHibernateMaps\MappingIntegrationTests.cs" />

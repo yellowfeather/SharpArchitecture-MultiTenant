@@ -3,7 +3,7 @@ using SharpArchitecture.MultiTenant.Framework.Commands;
 
 namespace SharpArchitecture.MultiTenant.ApplicationServices.Commands
 {
-  public class ImportCustomersCommand : CommandBase<ImportCustomersCommandResult>
+  public class ImportCustomersCommand : ICommand
   {
     public ImportCustomersCommand(Guid uploadKey)
     {

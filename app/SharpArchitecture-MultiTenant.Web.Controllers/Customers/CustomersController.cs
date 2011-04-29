@@ -16,13 +16,13 @@ namespace SharpArchitecture.MultiTenant.Web.Controllers.Customers
   public class CustomersController : Controller
   {
     private const int DefaultPageSize = 20;
-    private readonly IBus _bus;
+    private readonly ICommandProcessor _commandProcessor;
     private readonly ICustomerListQuery _customerListQuery;
     private readonly IRepository<Customer> _customerRepository;
 
-    public CustomersController(IBus bus, ICustomerListQuery customerListQuery, IRepository<Customer> customerRepository)
+    public CustomersController(ICommandProcessor commandProcessor, ICustomerListQuery customerListQuery, IRepository<Customer> customerRepository)
     {
-      _bus = bus;
+      _commandProcessor = commandProcessor;
       _customerListQuery = customerListQuery;
       _customerRepository = customerRepository;
     }
@@ -155,10 +155,9 @@ namespace SharpArchitecture.MultiTenant.Web.Controllers.Customers
       }
 
       var command = new ImportCustomersCommand(viewModel.UploadKey);
-      _bus.Send(command);
+      var results = _commandProcessor.Process(command);
 
-      var result = command.Result;
-      if (result.Success) {
+      if (results.Success) {
         return RedirectToAction("Index");
       }
 
@@ -170,10 +169,8 @@ namespace SharpArchitecture.MultiTenant.Web.Controllers.Customers
     public ActionResult Upload(Guid uploadKey, HttpPostedFileBase fileData)
     {
       var command = new UploadFileCommand(uploadKey, fileData, ControllerContext.HttpContext.User.Identity.Name);
-      _bus.Send(command);
-
-      var result = command.Result;
-      return Json(new { Status = result.Success ? "OK" : "Error" }); 
+      var results = _commandProcessor.Process(command);
+      return Json(new { Status = results.Success ? "OK" : "Error" }); 
     }
   }
 }

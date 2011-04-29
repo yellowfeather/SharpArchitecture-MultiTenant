@@ -6,7 +6,7 @@ using SharpArchitecture.MultiTenant.Framework.Commands;
 
 namespace SharpArchitecture.MultiTenant.ApplicationServices.CommandHandlers
 {
-  public class UploadFileCommandHandler : IMessageHandler<UploadFileCommand>
+  public class UploadFileCommandHandler : ICommandHandler<UploadFileCommand>
   {
     private readonly IFileStore _fileStore;
     private readonly IRepository<Upload> _uploadRepository;
@@ -17,17 +17,17 @@ namespace SharpArchitecture.MultiTenant.ApplicationServices.CommandHandlers
       _uploadRepository = uploadRepository;
     }
 
-    public void Handle(UploadFileCommand command)
+    public ICommandResult Handle(UploadFileCommand command)
     {
       try {
         var upload = new Upload(command.FileData.FileName, command.GroupId, command.Username);
         upload.UploadedPath = _fileStore.SaveUploadedFile(upload.UploadedFilename, command.FileData);
         _uploadRepository.SaveOrUpdate(upload);
 
-        command.Result = new UploadFileCommandResult(true);
+        return new UploadFileCommandResult(true);
       }
       catch (Exception ex) {
-        command.Result = new UploadFileCommandResult(false) { Message = "A problem was encountered uploading the file: " + ex.Message };
+        return new UploadFileCommandResult(false) { Message = "A problem was encountered uploading the file: " + ex.Message };
       }
     }
   }

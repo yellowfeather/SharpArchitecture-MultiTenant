@@ -2,13 +2,9 @@
 
 namespace SharpArchitecture.MultiTenant.ApplicationServices.Commands
 {
-  public class ImportCustomersCommandResult : ICommandResult
+  public class ImportCustomersCommandResult : CommandResultBase
   {
-    public ImportCustomersCommandResult(bool success)
-    {
-      Success = success;
-    }
-
-    public bool Success { get; private set; }
+    public ImportCustomersCommandResult(bool success) 
+      : base(success) {}
   }
 }

@@ -27,9 +27,9 @@ namespace SharpArchitecture.MultiTenant.Web.CastleWindsor
 
             container.Register(
                 Component
-                    .For(typeof(IBus))
-                    .ImplementedBy(typeof(Bus))
-                    .Named("bus"));
+                    .For(typeof(ICommandProcessor))
+                    .ImplementedBy(typeof(CommandProcessor))
+                    .Named("CommandProcessor"));
 
             container.Register(
                 Component
