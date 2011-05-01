@@ -10,6 +10,10 @@ namespace SharpArchitecture.MultiTenant.Framework.Commands
       var results = new CommandResults();
 
       var handlers = ServiceLocator.Current.GetAllInstances<ICommandHandler<TCommand>>();
+	  if (handlers == null || !handlers.Any()) {
+		throw new CommandHandlerNotFoundException();
+	  }
+			
       foreach (var result in handlers.Select(handler => handler.Handle(command))) {
         results.AddResult(result);
       }

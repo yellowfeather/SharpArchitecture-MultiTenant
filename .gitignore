@@ -29,3 +29,7 @@ obj/
 [Rr]elease*/
 _ReSharper*/
 [Tt]est[Rr]esult*
+#Ignore MonoDevelop files
+*.pidb
+*.userprefs
+*.DS_Store
