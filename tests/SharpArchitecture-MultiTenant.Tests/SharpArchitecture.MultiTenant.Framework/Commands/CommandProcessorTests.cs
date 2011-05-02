@@ -36,6 +36,14 @@ namespace Tests.SharpArchitecture.MultiTenant.Framework.Commands
     }
 
     [Test]
+    [ExpectedException(typeof(CommandHandlerNotFoundException))]
+    public void ThrowsIfCommandHandlerNotFound()
+    {
+      var testCommand = new TestCommand();
+      _commandProcessor.Process(testCommand);
+    }
+
+    [Test]
     public void CanHandleSingleCommand()
     {
       _container.Register(
