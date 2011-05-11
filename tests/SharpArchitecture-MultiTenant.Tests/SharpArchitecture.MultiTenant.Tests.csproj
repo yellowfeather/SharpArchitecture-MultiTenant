@@ -82,6 +82,7 @@
       <HintPath>..\..\lib\SharpArch.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -106,9 +107,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\CommandProcessorTests.cs" />
+    <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\CommandTests.cs" />
+    <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\InvalidCommand.cs" />
     <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\TestCommandHandler.cs" />
     <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\TestCommand.cs" />
     <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\TestCommandResult.cs" />
+    <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\ValidCommand.cs" />
     <Compile Include="SharpArchitecture.MultiTenant.Framework\NHibernate\MultiTenantSessionFactoryKeyProviderTests.cs" />
     <Compile Include="SharpArchitecture.MultiTenant.Web\Controllers\RouteRegistrarTests.cs" />
     <Compile Include="SharpArchitecture.MultiTenant.Data\NHibernateMaps\MappingIntegrationTests.cs" />

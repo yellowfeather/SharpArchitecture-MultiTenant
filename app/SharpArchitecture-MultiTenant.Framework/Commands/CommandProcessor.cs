@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using Microsoft.Practices.ServiceLocation;
 
 namespace SharpArchitecture.MultiTenant.Framework.Commands
@@ -9,6 +10,8 @@ namespace SharpArchitecture.MultiTenant.Framework.Commands
 
     public ICommandResults Process<TCommand>(TCommand command) where TCommand : ICommand
     {
+      Validator.ValidateObject(command, new ValidationContext(command, null, null));
+
       var results = new CommandResults();
 
       var handlers = ServiceLocator.Current.GetAllInstances<ICommandHandler<TCommand>>();

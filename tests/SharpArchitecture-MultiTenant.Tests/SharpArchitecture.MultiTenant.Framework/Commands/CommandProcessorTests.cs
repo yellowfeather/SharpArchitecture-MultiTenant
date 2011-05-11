@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using CommonServiceLocator.WindsorAdapter;
@@ -33,6 +34,14 @@ namespace Tests.SharpArchitecture.MultiTenant.Framework.Commands
 
       _container.Dispose();
       _container = null;
+    }
+
+    [Test]
+    [ExpectedException(typeof(ValidationException))]
+    public void ThrowsIfCommandIsInvalid()
+    {
+      var testCommand = new InvalidCommand();
+      _commandProcessor.Process(testCommand);
     }
 
     [Test]
