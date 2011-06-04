@@ -7,13 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpArchitecture.MultiTena
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpArchitecture.MultiTenant.Data", "app\SharpArchitecture-MultiTenant.Data\SharpArchitecture.MultiTenant.Data.csproj", "{63E9AECE-3385-44F0-BDF9-4C01DD3C0647}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpArchitecture.MultiTenant.Web.Controllers", "app\SharpArchitecture-MultiTenant.Web.Controllers\SharpArchitecture.MultiTenant.Web.Controllers.csproj", "{518B2E4B-2B9B-48EF-8736-DDB6A0F78E79}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpArchitecture.MultiTenant.Tests", "tests\SharpArchitecture-MultiTenant.Tests\SharpArchitecture.MultiTenant.Tests.csproj", "{A909BF90-3A0F-4CB9-9D78-44328589BF2C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpArchitecture.MultiTenant.Web", "app\SharpArchitecture-MultiTenant.Web\SharpArchitecture.MultiTenant.Web.csproj", "{CD10C59F-658A-4297-9E52-A431B2E32EE0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpArchitecture-MultiTenant.Framework", "app\SharpArchitecture-MultiTenant.Framework\SharpArchitecture.MultiTenant.Framework.csproj", "{F5A0D972-5870-4EB8-8400-F7F2435AE11C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpArchitecture.MultiTenant.Framework", "app\SharpArchitecture-MultiTenant.Framework\SharpArchitecture.MultiTenant.Framework.csproj", "{F5A0D972-5870-4EB8-8400-F7F2435AE11C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +31,6 @@ Global
 		{63E9AECE-3385-44F0-BDF9-4C01DD3C0647}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{63E9AECE-3385-44F0-BDF9-4C01DD3C0647}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{63E9AECE-3385-44F0-BDF9-4C01DD3C0647}.Release|Any CPU.Build.0 = Release|Any CPU
-		{518B2E4B-2B9B-48EF-8736-DDB6A0F78E79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{518B2E4B-2B9B-48EF-8736-DDB6A0F78E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{518B2E4B-2B9B-48EF-8736-DDB6A0F78E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{518B2E4B-2B9B-48EF-8736-DDB6A0F78E79}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A909BF90-3A0F-4CB9-9D78-44328589BF2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A909BF90-3A0F-4CB9-9D78-44328589BF2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A909BF90-3A0F-4CB9-9D78-44328589BF2C}.Release|Any CPU.ActiveCfg = Release|Any CPU

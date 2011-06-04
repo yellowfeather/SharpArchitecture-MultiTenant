@@ -2,7 +2,7 @@
 using System.Linq;
 using FluentNHibernate;
 using FluentNHibernate.Automapping;
-using SharpArch.Core.DomainModel;
+using SharpArch.Domain.DomainModel;
 using SharpArchitecture.MultiTenant.Framework.Contracts;
 using SharpArchitecture.MultiTenant.Framework.Extensions;
 

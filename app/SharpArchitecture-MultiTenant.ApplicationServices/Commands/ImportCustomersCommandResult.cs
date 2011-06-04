@@ -1,8 +1,8 @@
-﻿using SharpArchitecture.MultiTenant.Framework.Commands;
+﻿using SharpArch.Domain.Commands;
 
 namespace SharpArchitecture.MultiTenant.ApplicationServices.Commands
 {
-  public class ImportCustomersCommandResult : CommandResultBase
+  public class ImportCustomersCommandResult : CommandResult
   {
     public ImportCustomersCommandResult(bool success) 
       : base(success) {}

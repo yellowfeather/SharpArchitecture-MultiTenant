@@ -1,8 +1,8 @@
 ﻿using System;
 using FluentNHibernate.Automapping;
 using FluentNHibernate.Conventions;
-using SharpArch.Core.DomainModel;
-using SharpArch.Data.NHibernate.FluentNHibernate;
+using SharpArch.Domain.DomainModel;
+using SharpArch.NHibernate.FluentNHibernate;
 using SharpArchitecture.MultiTenant.Core;
 using SharpArchitecture.MultiTenant.Data.NHibernateMaps.Conventions;
 using ForeignKeyConvention = SharpArchitecture.MultiTenant.Data.NHibernateMaps.Conventions.ForeignKeyConvention;

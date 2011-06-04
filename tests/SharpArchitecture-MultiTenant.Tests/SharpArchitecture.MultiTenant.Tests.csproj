@@ -43,7 +43,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\CommonServiceLocator.WindsorAdapter.dll</HintPath>
     </Reference>
-    <Reference Include="FluentNHibernate, Version=1.2.0.694, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+    <Reference Include="FluentNHibernate">
       <HintPath>..\..\lib\FluentNHibernate.dll</HintPath>
     </Reference>
     <Reference Include="Inflector.Net, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -54,17 +54,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
-    <Reference Include="MvcContrib, Version=2.0.96.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="MvcContrib">
       <HintPath>..\..\lib\MvcContrib.dll</HintPath>
     </Reference>
-    <Reference Include="MvcContrib.TestHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\tools\lib\MvcContrib.TestHelper.dll</HintPath>
+    <Reference Include="MvcContrib.TestHelper">
+      <HintPath>..\..\lib\MvcContrib.TestHelper.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate, Version=3.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+    <Reference Include="NHibernate">
       <HintPath>..\..\lib\NHibernate.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate.ByteCode.Castle, Version=3.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <HintPath>..\..\lib\NHibernate.ByteCode.Castle.dll</HintPath>
     </Reference>
     <Reference Include="NHibernate.Validator">
       <HintPath>..\..\lib\NHibernate.Validator.dll</HintPath>
@@ -77,9 +74,17 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\tools\lib\Rhino.Mocks.dll</HintPath>
     </Reference>
-    <Reference Include="SharpArch, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\SharpArch.dll</HintPath>
+    <Reference Include="SharpArch.Domain">
+      <HintPath>..\..\lib\SharpArch.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpArch.NHibernate">
+      <HintPath>..\..\lib\SharpArch.NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpArch.Testing">
+      <HintPath>..\..\lib\SharpArch.Testing.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpArch.Testing.NUnit">
+      <HintPath>..\..\lib\SharpArch.Testing.NUnit.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -106,13 +111,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\CommandProcessorTests.cs" />
-    <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\CommandTests.cs" />
-    <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\InvalidCommand.cs" />
-    <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\TestCommandHandler.cs" />
-    <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\TestCommand.cs" />
-    <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\TestCommandResult.cs" />
-    <Compile Include="SharpArchitecture.MultiTenant.Framework\Commands\ValidCommand.cs" />
     <Compile Include="SharpArchitecture.MultiTenant.Framework\NHibernate\MultiTenantSessionFactoryKeyProviderTests.cs" />
     <Compile Include="SharpArchitecture.MultiTenant.Web\Controllers\RouteRegistrarTests.cs" />
     <Compile Include="SharpArchitecture.MultiTenant.Data\NHibernateMaps\MappingIntegrationTests.cs" />
@@ -134,10 +132,6 @@
     <ProjectReference Include="..\..\app\SharpArchitecture-MultiTenant.Framework\SharpArchitecture.MultiTenant.Framework.csproj">
       <Project>{F5A0D972-5870-4EB8-8400-F7F2435AE11C}</Project>
       <Name>SharpArchitecture.MultiTenant.Framework</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\app\SharpArchitecture-MultiTenant.Web.Controllers\SharpArchitecture.MultiTenant.Web.Controllers.csproj">
-      <Project>{518B2E4B-2B9B-48EF-8736-DDB6A0F78E79}</Project>
-      <Name>SharpArchitecture-MultiTenant.Web.Controllers</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\app\SharpArchitecture-MultiTenant.Core\SharpArchitecture.MultiTenant.Core.csproj">
       <Project>{7696B4F6-2A10-40C4-A1E2-B9768182588C}</Project>

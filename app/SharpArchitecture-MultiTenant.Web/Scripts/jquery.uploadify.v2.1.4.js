@@ -1,4 +1,4 @@
-/*
+﻿/*
 Uploadify v2.1.4
 Release Date: November 8, 2010
 

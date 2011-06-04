@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="SharpArch.NHibernate">
+      <HintPath>..\..\lib\SharpArch.NHibernate.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -50,20 +53,8 @@
     <Reference Include="NHibernate, Version=3.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4">
       <HintPath>..\..\lib\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="SharpArch, Version=1.9.5.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\lib\SharpArch.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\CommandBase.cs" />
-    <Compile Include="Commands\CommandProcessor.cs" />
-    <Compile Include="Commands\CommandResultBase.cs" />
-    <Compile Include="Commands\CommandResults.cs" />
-    <Compile Include="Commands\ICommand.cs" />
-    <Compile Include="Commands\ICommandHandler.cs" />
-    <Compile Include="Commands\ICommandProcessor.cs" />
-    <Compile Include="Commands\ICommandResult.cs" />
-    <Compile Include="Commands\ICommandResults.cs" />
     <Compile Include="Contracts\IMultiTenantQuery.cs" />
     <Compile Include="Extensions\TypeExtensions.cs" />
     <Compile Include="NHibernate\MultiTenantSessionFactoryKeyProvider.cs" />
@@ -71,7 +62,6 @@
     <Compile Include="Contracts\IMultiTenantRepository.cs" />
     <Compile Include="Services\ITenantContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Commands\CommandHandlerNotFoundException.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

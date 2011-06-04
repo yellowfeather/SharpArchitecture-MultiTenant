@@ -1,12 +1,10 @@
-﻿using System.Collections.Generic;
-using NHibernate;
-using NHibernate.Metadata;
-using NUnit.Framework;
-using SharpArchitecture.MultiTenant.Data.NHibernateMaps;
-using SharpArch.Data.NHibernate;
-using SharpArch.Testing.NHibernate;
+﻿using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Tool.hbm2ddl;
+using NUnit.Framework;
+using SharpArch.NHibernate;
+using SharpArchitecture.MultiTenant.Data.NHibernateMaps;
+using SharpArch.Testing.NHibernate;
 using System.IO;
 
 namespace Tests.SharpArchitecture.MultiTenant.Data.NHibernateMaps

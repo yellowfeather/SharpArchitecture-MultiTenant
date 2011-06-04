@@ -1,8 +1,8 @@
 ﻿using System;
-using SharpArch.Core.PersistenceSupport;
+using SharpArch.Domain.Commands;
+using SharpArch.Domain.PersistenceSupport;
 using SharpArchitecture.MultiTenant.ApplicationServices.Commands;
 using SharpArchitecture.MultiTenant.Core;
-using SharpArchitecture.MultiTenant.Framework.Commands;
 
 namespace SharpArchitecture.MultiTenant.ApplicationServices.CommandHandlers
 {

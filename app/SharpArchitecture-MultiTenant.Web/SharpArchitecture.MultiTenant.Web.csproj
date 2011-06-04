@@ -51,9 +51,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\CommonServiceLocator.WindsorAdapter.dll</HintPath>
     </Reference>
-    <Reference Include="FluentNHibernate, Version=1.2.0.694, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
-      <HintPath>..\..\lib\FluentNHibernate.dll</HintPath>
-    </Reference>
+    <Reference Include="FluentNHibernate, Version=1.2.0.712, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL" />
     <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\..\lib\Iesi.Collections.dll</HintPath>
     </Reference>
@@ -73,29 +71,27 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Microsoft.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="MvcContrib, Version=2.0.96.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\lib\MvcContrib.dll</HintPath>
-    </Reference>
-    <Reference Include="MvcContrib.FluentHtml, Version=2.0.36.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\lib\MvcContrib.FluentHtml.dll</HintPath>
-    </Reference>
+    <Reference Include="MvcContrib, Version=2.0.96.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=3.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate, Version=3.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <HintPath>..\..\lib\NHibernate.dll</HintPath>
-    </Reference>
-    <Reference Include="NHibernate.ByteCode.Castle, Version=3.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+    <Reference Include="NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL" />
+    <Reference Include="NHibernate.ByteCode.Castle">
       <HintPath>..\..\lib\NHibernate.ByteCode.Castle.dll</HintPath>
     </Reference>
     <Reference Include="NHibernate.Validator, Version=1.3.0.2001, Culture=neutral, PublicKeyToken=70154e18752585bd, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\lib\NHibernate.Validator.dll</HintPath>
     </Reference>
-    <Reference Include="SharpArch, Version=1.9.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\SharpArch.dll</HintPath>
+    <Reference Include="SharpArch.Domain">
+      <HintPath>..\..\lib\SharpArch.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpArch.NHibernate">
+      <HintPath>..\..\lib\SharpArch.NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpArch.Web.Mvc">
+      <HintPath>..\..\lib\SharpArch.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -114,6 +110,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CastleWindsor\ComponentRegistrar.cs" />
+    <Compile Include="Controllers\ControllerEnums.cs" />
+    <Compile Include="Controllers\Customers\CustomersController.cs" />
+    <Compile Include="Controllers\Customers\Queries\ICustomerListQuery.cs" />
+    <Compile Include="Controllers\Customers\Queries\Impl\CustomerListQuery.cs" />
+    <Compile Include="Controllers\Customers\ViewModels\CustomerFormViewModel.cs" />
+    <Compile Include="Controllers\Customers\ViewModels\CustomerListViewModel.cs" />
+    <Compile Include="Controllers\Customers\ViewModels\CustomerViewModel.cs" />
+    <Compile Include="Controllers\Customers\ViewModels\ImportCustomersFormViewModel.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RouteRegistrar.cs" />
+    <Compile Include="Controllers\Tenants\Queries\Impl\TenantListQuery.cs" />
+    <Compile Include="Controllers\Tenants\Queries\ITenantListQuery.cs" />
+    <Compile Include="Controllers\Tenants\TenantsController.cs" />
+    <Compile Include="Controllers\Tenants\ViewModels\TenantFormViewModel.cs" />
+    <Compile Include="Controllers\Tenants\ViewModels\TenantListViewModel.cs" />
+    <Compile Include="Controllers\Tenants\ViewModels\TenantViewModel.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -126,6 +138,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\TenantContext.cs" />
+    <Compile Include="TempDataExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Images\cancel.png" />
@@ -162,9 +175,9 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SharpArchitecture-MultiTenant.Web.Controllers\SharpArchitecture.MultiTenant.Web.Controllers.csproj">
-      <Project>{518B2E4B-2B9B-48EF-8736-DDB6A0F78E79}</Project>
-      <Name>SharpArchitecture-MultiTenant.Web.Controllers</Name>
+    <ProjectReference Include="..\SharpArchitecture-MultiTenant.ApplicationServices\SharpArchitecture.MultiTenant.ApplicationServices.csproj">
+      <Project>{EA00777D-3D7A-4406-8BFB-E5A90CF0E8A9}</Project>
+      <Name>SharpArchitecture.MultiTenant.ApplicationServices</Name>
     </ProjectReference>
     <ProjectReference Include="..\SharpArchitecture-MultiTenant.Core\SharpArchitecture.MultiTenant.Core.csproj">
       <Project>{7696B4F6-2A10-40C4-A1E2-B9768182588C}</Project>

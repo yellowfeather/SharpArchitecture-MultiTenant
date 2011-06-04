@@ -1,5 +1,5 @@
-﻿using SharpArch.Core.PersistenceSupport;
-using SharpArch.Core.DomainModel;
+﻿using SharpArch.Domain.DomainModel;
+using SharpArch.Domain.PersistenceSupport;
 
 namespace Tests.SharpArchitecture.MultiTenant.Data.TestDoubles
 {

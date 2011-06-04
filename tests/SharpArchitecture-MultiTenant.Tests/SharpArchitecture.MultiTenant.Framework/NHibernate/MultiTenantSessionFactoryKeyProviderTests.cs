@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
 using Rhino.Mocks;
-using SharpArch.Core.DomainModel;
-using SharpArch.Core.PersistenceSupport;
-using SharpArch.Data.NHibernate;
+using SharpArch.Domain.DomainModel;
+using SharpArch.Domain.PersistenceSupport;
+using SharpArch.NHibernate;
 using SharpArch.Testing.NUnit;
 using SharpArchitecture.MultiTenant.Framework.Contracts;
 using SharpArchitecture.MultiTenant.Framework.NHibernate;
@@ -16,8 +16,8 @@ namespace Tests.SharpArchitecture.MultiTenant.Framework.NHibernate
   public interface ITestRepository : IRepository<TestEntity> { }
   public interface ITestMultiTenantRepository : IRepository<TestMultiTenantEntity>, IMultiTenantRepository { }
 
-  public class TestRepository : Repository<TestEntity>, ITestRepository { }
-  public class TestMultiTenantRepository : Repository<TestMultiTenantEntity>, ITestMultiTenantRepository { }
+  public class TestRepository : NHibernateRepository<TestEntity>, ITestRepository { }
+  public class TestMultiTenantRepository : NHibernateRepository<TestMultiTenantEntity>, ITestMultiTenantRepository { }
 
   [TestFixture]
   public class MultiTenantSessionFactoryKeyProviderTests

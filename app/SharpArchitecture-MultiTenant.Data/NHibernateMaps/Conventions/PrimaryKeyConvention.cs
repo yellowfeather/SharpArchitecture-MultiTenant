@@ -1,5 +1,4 @@
 ﻿using FluentNHibernate.Conventions;
-using FluentNHibernate.Mapping;
 
 namespace SharpArchitecture.MultiTenant.Data.NHibernateMaps.Conventions
 {

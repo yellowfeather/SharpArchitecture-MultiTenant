@@ -4,13 +4,11 @@ using System.Web.Security;
 using Castle.Windsor;
 using CommonServiceLocator.WindsorAdapter;
 using Microsoft.Practices.ServiceLocation;
-using SharpArch.Core.PersistenceSupport;
-using SharpArch.Data.NHibernate;
-using SharpArch.Web.NHibernate;
-using SharpArch.Web.Castle;
-using SharpArch.Web.Areas;
-using SharpArch.Web.ModelBinder;
-using SharpArch.Core.NHibernateValidator.ValidatorProvider;
+using SharpArch.Domain.PersistenceSupport;
+using SharpArch.NHibernate;
+using SharpArch.NHibernate.Web.Mvc;
+using SharpArch.Web.Mvc.Castle;
+using SharpArch.Web.Mvc.ModelBinder;
 using System;
 using System.Web;
 using System.Web.Mvc;
@@ -31,12 +29,11 @@ namespace SharpArchitecture.MultiTenant.Web
         {
             log4net.Config.XmlConfigurator.Configure();
 
-            ViewEngines.Engines.Clear();
-            ViewEngines.Engines.Add(new AreaViewEngine());
+            // ViewEngines.Engines.Clear();
 
             ModelBinders.Binders.DefaultBinder = new SharpModelBinder();
 
-            ModelValidatorProviders.Providers.Add(new NHibernateValidatorProvider());
+            ModelValidatorProviders.Providers.Add(new ClientDataTypeModelValidatorProvider());
 
             InitializeServiceLocator();
 

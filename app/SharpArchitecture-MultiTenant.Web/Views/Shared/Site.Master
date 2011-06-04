@@ -35,7 +35,7 @@
                     <h2>SharpArchitecture.MultiTenant Pages</h2>
                     <ul>
                         <!-- We cannot use Html.ActionLink within a master page to link to a controller while using areas -->
-                        <li><%= Html.ActionLinkForAreas<HomeController>(c => c.Index(), "Home") %></li>
+                        <li><%= Html.ActionLink<HomeController>(c => c.Index(), "Home") %></li>
                         <li><%= Html.ActionLink<TenantsController>(c => c.Index(null), "Tenants") %></li>
                         <li><a href="http://tenant1.lvh.me:1062/customers">Tenant1 Customers</a></li>
                         <li><a href="http://tenant2.lvh.me:1062/customers">Tenant2 Customers</a></li>
